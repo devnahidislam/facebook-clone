@@ -1,0 +1,81 @@
+.register {
+  height: 100vh;
+  width: 100vw;
+  background-color: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .registerWrapper {
+    height: 80%;
+    width: 65%;
+    display: flex;
+
+    .registerRight {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .registerBox {
+        height: 440px;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .registerBtn {
+          height: 40px;
+          border-radius: 10px;
+          border: none;
+          background: #1877f2;
+          color: white;
+          font-size: 20px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: 0.2s;
+
+          &:hover {
+            background: #0061df;
+          }
+
+          &:disabled {
+            cursor: not-allowed;
+          }
+        }
+        .forgotPassword {
+          margin-top: 5px;
+          text-align: center;
+
+          .registerLoginLink {
+            color: #1877f2;
+            font-weight: 500;
+            text-align: center;
+            width: fit-content;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    .registerRight {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+
+      .registerRightTitle {
+        font-size: 50px;
+        font-weight: 800;
+        color: #1877f2;
+      }
+      .registerRightDesc {
+        font-size: 22px;
+      }
+    }
+  }
+}

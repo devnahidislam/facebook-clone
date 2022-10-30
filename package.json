@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "cd ./server && nodemon server.js",
     "client": "cd ./client && npm run dev",
     "dev": "concurrently \"cd ./server && npm run server\" \"cd ./client && npm run dev\""
   },
