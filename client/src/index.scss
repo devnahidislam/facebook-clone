@@ -18,10 +18,5 @@ $background-color: #f0f2f5;
   background-color: $background-color;
 }
 a {
-  font-weight: 500;
-  color: $color_1;
-  text-decoration: inherit;
-  &:hover {
-    color: $color_2;
-  }
+  text-decoration: none;
 }

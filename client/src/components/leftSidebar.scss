@@ -1,0 +1,61 @@
+.leftSidebar {
+  flex: 2;
+  height: calc(100vh - 50px);
+  position: sticky;
+  top: 50px;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #f0f2f5;
+  }
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background: #cacaca;
+      border-radius: 5px;
+    }
+  }
+
+  .leftSidebarWrapper {
+    padding: 10px 10px 0;
+
+    .leftSidebarList {
+      .leftSidebarListItem {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 5px;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.2s;
+        scroll-snap-align: center;
+
+        .leftSidebarImg {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+          background: #999;
+        }
+
+        &:hover {
+          background-color: #dddddd;
+        }
+
+        .leftSidebarListItemIcon {
+          color: #1877f2;
+        }
+        .leftSidebarListItemText {
+          font-size: 15px;
+          font-weight: 500;
+          color: #303131;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
