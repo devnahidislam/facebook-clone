@@ -17,8 +17,8 @@ const RightSidebar = () => {
             <h4>Your pages and profiles</h4>
             <div className="headerBtnIcon">
               <Tooltip arrow TransitionComponent={Zoom} title="Options">
-                <IconButton color="default" aria-label="More">
-                  <MoreHorizIcon />
+                <IconButton className="rightSidebarIconBtn" aria-label="More">
+                  <MoreHorizIcon className="rightSidebarIcon" />
                 </IconButton>
               </Tooltip>
             </div>
@@ -33,7 +33,7 @@ const RightSidebar = () => {
                   className="pageImg"
                 />
               </div>
-              <div className="rightsidebarPageName">Page Name</div>
+              <h4 className="rightsidebarPageName">Page Name</h4>
             </li>
 
             <li className="pageSwitch rightsidebarPage">
@@ -111,18 +111,18 @@ const RightSidebar = () => {
             <h4>Contacts</h4>
             <div className="headerBtnIcon">
               <Tooltip arrow TransitionComponent={Zoom} title="New room">
-                <IconButton color="default" aria-label="New Room">
-                  <VideoCallIcon />
+                <IconButton className='rightSidebarIconBtn' aria-label="New Room">
+                  <VideoCallIcon className="rightSidebarIcon" />
                 </IconButton>
               </Tooltip>
               <Tooltip arrow TransitionComponent={Zoom} title="Search by name">
-                <IconButton color="default" aria-label="Search">
-                  <SearchIcon />
+                <IconButton className='rightSidebarIconBtn' aria-label="Search">
+                  <SearchIcon className="rightSidebarIcon" />
                 </IconButton>
               </Tooltip>
               <Tooltip arrow TransitionComponent={Zoom} title="Options">
-                <IconButton color="default" aria-label="More">
-                  <MoreHorizIcon />
+                <IconButton className='rightSidebarIconBtn' aria-label="More">
+                  <MoreHorizIcon className="rightSidebarIcon" />
                 </IconButton>
               </Tooltip>
             </div>

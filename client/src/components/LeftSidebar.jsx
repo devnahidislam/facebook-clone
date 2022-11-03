@@ -40,7 +40,7 @@ const LeftSidebar = () => {
             </li>
           </Link>
           <li className="leftSidebarListItem">
-            <WidgetsIcon className="leftSidebarListItemIcon" />
+            <WidgetsIcon className="leftSidebarListItemIconDefault" />
             <span className="leftSidebarListItemText">Menu</span>
           </li>
           <li className="leftSidebarListItem">
@@ -76,7 +76,7 @@ const LeftSidebar = () => {
             <span className="leftSidebarListItemText">Questions</span>
           </li>
           <li className="leftSidebarListItem">
-            <AddLinkIcon className="leftSidebarListItemIcon" />
+            <AddLinkIcon className="leftSidebarListItemIconDefault" />
             <span className="leftSidebarListItemText">Shortcuts</span>
           </li>
 
@@ -89,6 +89,22 @@ const LeftSidebar = () => {
               className="leftSidebarImg"
             />
             <span className="leftSidebarListItemText">Page Name</span>
+          </li>
+          <li className="leftSidebarListItem">
+            <img
+              src="assets/icons/nahid.jpg"
+              alt="avatar"
+              className="leftSidebarImg"
+            />
+            <span className="leftSidebarListItemText">Pages</span>
+          </li>
+          <li className="leftSidebarListItem">
+            <img
+              src="assets/icons/nahid.jpg"
+              alt="avatar"
+              className="leftSidebarImg"
+            />
+            <span className="leftSidebarListItemText">Pages</span>
           </li>
           <li className="leftSidebarListItem">
             <img

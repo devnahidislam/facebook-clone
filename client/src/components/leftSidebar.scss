@@ -1,59 +1,67 @@
+@import '../pages/root/theme.scss';
+
 .leftSidebar {
-  flex: 2;
-  height: calc(100vh - 50px);
-  position: sticky;
-  top: 50px;
-  overflow-y: scroll;
-  scroll-snap-type: y proximity;
+  @include themify($themes) {
+    flex: 2;
+    height: calc(100vh - 50px);
+    position: sticky;
+    top: 50px;
+    background-color: themed(bg);
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
 
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: #f0f2f5;
-  }
-  &:hover {
-    &::-webkit-scrollbar-thumb {
-      background: #cacaca;
-      border-radius: 5px;
+    &::-webkit-scrollbar {
+      width: 5px;
     }
-  }
-
-  .leftSidebarWrapper {
-    padding: 10px 10px 0;
-
-    .leftSidebarList {
-      .leftSidebarListItem {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 5px;
-        padding: 5px;
+    &::-webkit-scrollbar-track {
+      background-color: themed(scrollBarbg);
+    }
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background: themed(scrollBarclr);
         border-radius: 5px;
-        cursor: pointer;
-        transition: 0.2s;
-        scroll-snap-align: center;
+      }
+    }
 
-        .leftSidebarImg {
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          object-fit: cover;
-          background: #999;
-        }
+    .leftSidebarWrapper {
+      padding: 10px 10px 0;
 
-        &:hover {
-          background-color: #dddddd;
-        }
+      .leftSidebarList {
+        .leftSidebarListItem {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 5px;
+          padding: 5px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: 0.2s;
+          scroll-snap-align: center;
 
-        .leftSidebarListItemIcon {
-          color: #1877f2;
-        }
-        .leftSidebarListItemText {
-          font-size: 15px;
-          font-weight: 500;
-          color: #303131;
-          text-transform: capitalize;
+          .leftSidebarImg {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: themed(grayBg);
+          }
+
+          &:hover {
+            background-color: themed(hover);
+          }
+
+          .leftSidebarListItemIconDefault {
+            color: themed(textColor);
+          }
+          .leftSidebarListItemIcon {
+            color: themed(icon);
+          }
+          .leftSidebarListItemText {
+            font-size: 15px;
+            font-weight: 500;
+            color: themed(textColor);
+            text-transform: capitalize;
+          }
         }
       }
     }

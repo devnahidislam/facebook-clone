@@ -1,7 +1,4 @@
-$color_1: #646cff;
-$color_2: #535bf2;
 $font-family: 'Roboto', sans-serif;
-$background-color: #f0f2f5;
 
 * {
   margin: 0;
@@ -15,7 +12,6 @@ $background-color: #f0f2f5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  background-color: $background-color;
 }
 a {
   text-decoration: none;

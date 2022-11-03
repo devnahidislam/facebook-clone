@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import './navbar.scss';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
@@ -12,6 +13,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { IconButton, Tooltip, Zoom } from '@mui/material';
+import { DarkModeContext } from '../context/darkModeContext';
 
 const useClickOutside = (handler) => {
   const domNode = useRef();
@@ -30,7 +32,9 @@ const useClickOutside = (handler) => {
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const toggle = () => setOpen((open) => !open);
+  const toggleMenu = () => setOpen((open) => !open);
+
+  const { darkMode, toggleTheme } = useContext(DarkModeContext);
 
   const domNode = useClickOutside(() => {
     setOpen(false);
@@ -46,7 +50,7 @@ const Navbar = () => {
 
       <div className="navCenter">
         <div className="searchbar">
-          <SearchIcon fontSize="small" className="searchIcon" />
+          <SearchIcon className="searchIcon" />
           <input
             type="text"
             placeholder="Search Facebook"
@@ -57,28 +61,29 @@ const Navbar = () => {
 
       <div className="navRight">
         <div className="navIcons">
-          <Tooltip arrow TransitionComponent={Zoom} title="Night Mood">
-            <IconButton>
-              <DarkModeIcon fontSize="small" sx={{ color: 'black' }} />
+          <Tooltip arrow TransitionComponent={Zoom} title={darkMode ? 'Light Mode' : 'Dark Mode'}>
+            <IconButton onClick={toggleTheme}>
+              {darkMode ? (
+                <LightModeOutlinedIcon className="navIcon" />
+              ) : (
+                <DarkModeIcon className="navIcon" />
+              )}
             </IconButton>
           </Tooltip>
           <Tooltip arrow TransitionComponent={Zoom} title="Messenger">
             <IconButton>
-              <ChatIcon fontSize="small" sx={{ color: 'black' }} />
+              <ChatIcon className="navIcon" />
             </IconButton>
           </Tooltip>
           <Tooltip arrow TransitionComponent={Zoom} title="Notification">
             <IconButton>
-              <NotificationsActiveIcon
-                fontSize="small"
-                sx={{ color: 'black' }}
-              />
+              <NotificationsActiveIcon className="navIcon" />
             </IconButton>
           </Tooltip>
         </div>
         <div className="avatar" ref={domNode}>
           <Tooltip arrow TransitionComponent={Zoom} title="Account">
-            <div className="menuToggle" onClick={() => toggle()}>
+            <div className="menuToggle" onClick={toggleMenu}>
               <img
                 src="assets/icons/noAvatar.png"
                 alt="avata"
