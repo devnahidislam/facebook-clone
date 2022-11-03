@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './leftSidebar.scss';
 import HomeIcon from '@mui/icons-material/Home';
 import WidgetsIcon from '@mui/icons-material/Widgets';
@@ -12,8 +12,11 @@ import SchoolIcon from '@mui/icons-material/School';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import AddLinkIcon from '@mui/icons-material/AddLink';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/authContext';
 
 const LeftSidebar = () => {
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="leftSidebar">
       <div className="leftSidebarWrapper">
@@ -27,15 +30,15 @@ const LeftSidebar = () => {
           <Link to={'/profile'}>
             <li className="leftSidebarListItem">
               <img
-                src="assets/icons/nahid.jpg"
-                alt="avatar"
+                src={currentUser.profilePic || 'assets/icons/noAvatar.png'}
+                alt="img"
                 className="leftSidebarImg"
               />
               <span
                 className="leftSidebarListItemText"
                 style={{ fontWeight: '500' }}
               >
-                Nahid Islam
+                {currentUser.name}
               </span>
             </li>
           </Link>

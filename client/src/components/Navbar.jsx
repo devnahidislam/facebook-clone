@@ -14,6 +14,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { IconButton, Tooltip, Zoom } from '@mui/material';
 import { DarkModeContext } from '../context/darkModeContext';
+import { AuthContext } from './../context/authContext';
 
 const useClickOutside = (handler) => {
   const domNode = useRef();
@@ -33,6 +34,7 @@ const useClickOutside = (handler) => {
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const toggleMenu = () => setOpen((open) => !open);
+  const { currentUser } = useContext(AuthContext);
 
   const { darkMode, toggleTheme } = useContext(DarkModeContext);
 
@@ -61,7 +63,11 @@ const Navbar = () => {
 
       <div className="navRight">
         <div className="navIcons">
-          <Tooltip arrow TransitionComponent={Zoom} title={darkMode ? 'Light Mode' : 'Dark Mode'}>
+          <Tooltip
+            arrow
+            TransitionComponent={Zoom}
+            title={darkMode ? 'Light Mode' : 'Dark Mode'}
+          >
             <IconButton onClick={toggleTheme}>
               {darkMode ? (
                 <LightModeOutlinedIcon className="navIcon" />
@@ -85,8 +91,8 @@ const Navbar = () => {
           <Tooltip arrow TransitionComponent={Zoom} title="Account">
             <div className="menuToggle" onClick={toggleMenu}>
               <img
-                src="assets/icons/noAvatar.png"
-                alt="avata"
+                src={currentUser.profilePic || 'assets/icons/noAvatar.png'}
+                alt="img"
                 className="navImg"
               />
               <div className="profileBadge">
@@ -98,8 +104,10 @@ const Navbar = () => {
             <div className="menu">
               <Link to={'/profile'}>
                 <div className="profile">
-                  <img src="assets/icons/nahid.jpg" alt="avatar" />
-                  Nahid Islam
+                  <img
+                    src={currentUser.profilePic || 'assets/icons/noAvatar.png'}
+                  />
+                  <span>{currentUser?.name}</span>
                 </div>
               </Link>
               <div className="menuOption">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './rightSidebar.scss';
 import { IconButton, Tooltip, Zoom } from '@mui/material';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
@@ -6,8 +6,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import SupervisedUserCircleOutlinedIcon from '@mui/icons-material/SupervisedUserCircleOutlined';
 import CampaignOutlinedIcon from '@mui/icons-material/CampaignOutlined';
+import { AuthContext } from '../context/authContext';
 
 const RightSidebar = () => {
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="rightSidebar">
       <div className="rightSidebarWrapper">
@@ -28,7 +31,7 @@ const RightSidebar = () => {
             <li className="rightsidebarPage">
               <div className="rightsidebarPageImg">
                 <img
-                  src="assets/icons/nahid.jpg"
+                  src={currentUser.profilePic || 'assets/icons/noAvatar.png'}
                   alt="avatar"
                   className="pageImg"
                 />
@@ -111,17 +114,20 @@ const RightSidebar = () => {
             <h4>Contacts</h4>
             <div className="headerBtnIcon">
               <Tooltip arrow TransitionComponent={Zoom} title="New room">
-                <IconButton className='rightSidebarIconBtn' aria-label="New Room">
+                <IconButton
+                  className="rightSidebarIconBtn"
+                  aria-label="New Room"
+                >
                   <VideoCallIcon className="rightSidebarIcon" />
                 </IconButton>
               </Tooltip>
               <Tooltip arrow TransitionComponent={Zoom} title="Search by name">
-                <IconButton className='rightSidebarIconBtn' aria-label="Search">
+                <IconButton className="rightSidebarIconBtn" aria-label="Search">
                   <SearchIcon className="rightSidebarIcon" />
                 </IconButton>
               </Tooltip>
               <Tooltip arrow TransitionComponent={Zoom} title="Options">
-                <IconButton className='rightSidebarIconBtn' aria-label="More">
+                <IconButton className="rightSidebarIconBtn" aria-label="More">
                   <MoreHorizIcon className="rightSidebarIcon" />
                 </IconButton>
               </Tooltip>

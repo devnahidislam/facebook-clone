@@ -215,13 +215,12 @@ $headerColor: #303131;
                 cursor: pointer;
               }
               .followBtn {
-                color: themed(textColor);
+                color: #fff;
                 background-color: themed(icon);
                 transition: 0.2s;
 
                 &:hover {
                   background-color: #005cd4;
-                  color: #fff;
                 }
               }
               .deleteBtn {

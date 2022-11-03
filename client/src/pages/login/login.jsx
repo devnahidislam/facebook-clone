@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './login.scss';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { loginSchema } from '../../schema';
 import { CircularProgress, TextField, Tooltip, Zoom } from '@mui/material';
+import { AuthContext } from './../../context/authContext';
 
 const Login = () => {
+  const { login } = useContext(AuthContext);
+
   const onSubmit = async (values, actions) => {
     console.log('Login form submited Successfully.');
     console.log(values);
     actions.resetForm();
+    login();
   };
 
   const {
@@ -91,7 +95,7 @@ const Login = () => {
 
             <button className="loginBtn" disabled={!isValid} type="submit">
               {isSubmitting ? (
-                <CircularProgress sx={{ color: 'white' }} size={30} />
+                <CircularProgress sx={{ color: 'white' }} size={25} />
               ) : (
                 'Log In'
               )}

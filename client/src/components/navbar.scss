@@ -148,7 +148,7 @@
           border-radius: 8px;
           background-color: themed(grayBg);
           box-shadow: themed(textColorSoft) 0px 2px 4px,
-            themed(textColorSoft) 0px 8px 16px;
+            themed(textColorSoft) 0px 4px 8px;
 
           .profile {
             display: flex;
@@ -156,14 +156,14 @@
             gap: 5px;
             font-weight: bold;
             padding: 3px 5px;
-            color: themed(textColorSoft);
+            color: themed(textColor);
             border-radius: 5px;
             text-transform: capitalize;
             cursor: pointer;
             transition: 0.2s;
 
             &:hover {
-              background-color: themed(hover);
+              background-color: themed(navIconHover);
             }
 
             img {
@@ -171,7 +171,7 @@
               height: 32px;
               border-radius: 50%;
               object-fit: cover;
-              background: themed(textColor);
+              background: themed(textColorSoft);
             }
           }
           .menuOption {
@@ -180,13 +180,13 @@
             gap: 5px;
             padding: 5px;
             margin-top: 5px;
-            color: themed(textColorSoft);
+            color: themed(textColor);
             border-radius: 5px;
             cursor: pointer;
             transition: 0.2s;
 
             &:hover {
-              background-color: themed(hover);
+              background-color: themed(navIconHover);
             }
           }
         }

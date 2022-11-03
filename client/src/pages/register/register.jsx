@@ -23,9 +23,11 @@ const Register = () => {
     handleSubmit,
   } = useFormik({
     initialValues: {
-      username: '',
+      firstname: '',
+      surname: '',
       email: '',
       password: '',
+      confirmPassword: '',
     },
     validationSchema: registerSchema,
     onSubmit,
@@ -162,7 +164,7 @@ const Register = () => {
 
             <button className="registerBtn" disabled={!isValid} type="submit">
               {isSubmitting ? (
-                <CircularProgress sx={{ color: 'white' }} size={30} />
+                <CircularProgress sx={{ color: 'white' }} size={25} />
               ) : (
                 'Sign Up'
               )}
