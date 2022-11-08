@@ -1,14 +1,12 @@
 @import '../pages/root/theme.scss';
 
-$headerColor: #303131;
-
 .rightSidebar {
   @include themify($themes) {
     flex: 3;
     position: sticky;
     height: calc(100vh - 50px);
     top: 50px;
-    background-color: themed(bg);
+    background-color: themed(grayBg);
     overflow-y: scroll;
     scroll-snap-type: y proximity;
 
@@ -20,7 +18,7 @@ $headerColor: #303131;
     }
     &:hover {
       &::-webkit-scrollbar-thumb {
-        background: themed(searchColor);
+        background: themed(scrollBarclr);
         border-radius: 6px;
       }
     }
@@ -43,7 +41,7 @@ $headerColor: #303131;
           .headerBtnIcon {
             .rightSidebarIconBtn {
               &:hover {
-                background-color: themed(grayBg);
+                background-color: themed(hover);
               }
               &:focus {
                 color: themed(textColor);
@@ -88,11 +86,11 @@ $headerColor: #303131;
           }
 
           .rightSidebarIcon {
-            color: themed(searchColor);
+            color: themed(textColorSoft);
             font-size: 25px;
           }
           .rightsidebarPageText {
-            color: themed(searchColor);
+            color: themed(textColorSoft);
             font-size: 14px;
           }
         }
@@ -253,7 +251,7 @@ $headerColor: #303131;
           .headerBtnIcon {
             .rightSidebarIconBtn {
               &:hover {
-                background-color: themed(grayBg);
+                background-color: themed(hover);
               }
               &:focus {
                 color: themed(textColor);
@@ -299,7 +297,7 @@ $headerColor: #303131;
           height: 12px;
           width: 12px;
           background-color: limegreen;
-          border: 2px solid themed(textColorSoft);
+          border: 2px solid themed(postBg);
           border-radius: 50%;
           bottom: 0;
           right: -4px;

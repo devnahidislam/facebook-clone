@@ -90,6 +90,7 @@ const Navbar = () => {
         <div className="avatar" ref={domNode}>
           <Tooltip arrow TransitionComponent={Zoom} title="Account">
             <div className="menuToggle" onClick={toggleMenu}>
+              <div className="overlay"></div>
               <img
                 src={currentUser.profilePic || 'assets/icons/noAvatar.png'}
                 alt="img"
@@ -102,7 +103,7 @@ const Navbar = () => {
           </Tooltip>
           {open && (
             <div className="menu">
-              <Link to={'/profile'}>
+              <Link to={'/profile/1'}>
                 <div className="profile">
                   <img
                     src={currentUser.profilePic || 'assets/icons/noAvatar.png'}

@@ -1,10 +1,12 @@
 import React from 'react';
+import { Posts, Stories } from '../../components';
 import './home.scss';
 
 const home = () => {
   return (
     <div className="home">
-      <h2>Home Page</h2>
+      <Stories />
+      <Posts />
     </div>
   );
 };

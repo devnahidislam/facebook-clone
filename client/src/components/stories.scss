@@ -1,0 +1,49 @@
+.stories {
+  display: flex;
+  gap: 10px;
+  height: 220px;
+  margin-bottom: 20px;
+
+  .story {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.3s;
+
+      &:hover {
+        transform: scale(1.04);
+      }
+    }
+    span {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      color: white;
+      font-weight: bold;
+    }
+    .addStoryBtn {
+      position: absolute;
+      bottom: 40px;
+      left: 10px;
+      flex: 25px;
+      padding: 6px 8px;
+      color: white;
+      font-weight: bold;
+      background-color: #1877f2;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:hover{
+        background-color: #338bff;
+      }
+    }
+  }
+}

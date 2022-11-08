@@ -1,0 +1,206 @@
+@import '../pages/root/theme.scss';
+
+.comments {
+  @include themify($themes) {
+    padding: 5px 12px;
+
+    hr {
+      margin-bottom: 5px;
+      border: 1px solid themed(grayBg);
+    }
+
+    .writeComment {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      .profileImg {
+        height: 35px;
+        width: 35px;
+        position: relative;
+
+        &:hover .overlay {
+          opacity: 1;
+        }
+
+        .overlay {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background-color: #18181836;
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          border-radius: 50%;
+          transition: 0.2s ease;
+        }
+
+        img {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        .activeStatus {
+          position: absolute;
+          height: 12px;
+          width: 12px;
+          background-color: #0e8cf1;
+          border: 2px solid themed(postBg);
+          border-radius: 50%;
+          bottom: 2px;
+          right: -4px;
+        }
+      }
+      .commentInputContainer {
+        flex: 2;
+        width: 100%;
+        height: 35px;
+        border-radius: 30px;
+        padding-left: 12px;
+        background-color: themed(searchBg);
+
+        .commentInput {
+          border: none;
+          width: 100%;
+          height: 35px;
+          font-size: 16px;
+          color: themed(textColor);
+          background: transparent;
+          outline: none;
+
+          &::placeholder {
+            color: themed(textColorSoft);
+          }
+        }
+      }
+      .commentBtn {
+        height: 35px;
+        width: 35px;
+      }
+    }
+
+    .comment {
+      display: flex;
+      align-content: center;
+      gap: 5px;
+
+      .userProfile {
+        height: 35px;
+        width: 35px;
+        position: relative;
+        cursor: pointer;
+
+        &:hover .overlay {
+          opacity: 1;
+        }
+
+        .overlay {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background-color: #18181835;
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          border-radius: 50%;
+          transition: 0.2s ease;
+        }
+        .profileImg {
+          height: 35px;
+          width: 35px;
+          border-radius: 50%;
+          object-fit: cover;
+          background-color: themed(grayBg);
+          overflow: hidden;
+        }
+      }
+      .commentInfo {
+        display: flex;
+        flex-direction: column;
+
+        .mainComment {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            background-color: themed(searchBg);
+            padding: 5px 15px;
+            border-radius: 15px;
+
+            .userName {
+              width: fit-content;
+
+              span {
+                font-weight: 500;
+                color: themed(textColor);
+                cursor: pointer;
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+            .commentDesc {
+              color: themed(textColor);
+              font-size: 15px;
+            }
+          }
+          .right {
+            .commentMoreBtn {
+              height: 35px;
+              width: 35px;
+
+              &:hover {
+                background-color: themed(hover);
+              }
+              &:focus {
+                color: themed(textColor);
+              }
+              .commentMoreBtnIcon {
+                color: themed(textColorSoft);
+              }
+            }
+          }
+        }
+        .commentAction {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          padding-top: 3px;
+          color: themed(textColor);
+          margin-left: 15px;
+
+          .like,
+          .reply,
+          .date {
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          .dotIcon {
+            font-size: 4px;
+          }
+          .date {
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}

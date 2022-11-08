@@ -11,7 +11,7 @@
     position: sticky;
     top: 0;
     z-index: 999;
-    background-color: themed(bg);
+    background-color: themed(navBg);
     box-shadow: 0px 1px 4px 0px themed(textColorSoft);
 
     .navLeft {
@@ -37,7 +37,7 @@
         border-radius: 30px;
         display: flex;
         align-items: center;
-        background-color: themed(grayBg);
+        background-color: themed(searchBg);
 
         &:hover {
           background-color: themed(hover);
@@ -45,7 +45,7 @@
 
         .searchIcon {
           margin: 0 5px 0 10px;
-          color: themed(searchColor);
+          color: themed(textColorSoft);
           font-size: 25px;
           cursor: text;
         }
@@ -59,7 +59,7 @@
           outline: none;
 
           &::placeholder {
-            color: themed(searchColor);
+            color: themed(textColorSoft);
           }
         }
       }
@@ -84,7 +84,7 @@
         }
 
         .MuiIconButton-root {
-          background-color: themed(grayBg);
+          background-color: themed(iconBg);
 
           &:hover {
             background-color: themed(navIconHover);
@@ -105,10 +105,32 @@
         position: relative;
 
         .menuToggle {
+          width: 34px;
+          height: 34px;
+          position: relative;
           cursor: pointer;
 
           &:active {
-            background-color: themed(bg);
+            background-color: themed(navBg);
+          }
+
+          &:hover .overlay {
+            opacity: 1;
+          }
+
+          .overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #18181836;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            border-radius: 50%;
+            transition: 0.2s ease;
           }
 
           .navImg {
@@ -129,7 +151,7 @@
             justify-content: center;
             border-radius: 50%;
             color: themed(textColor);
-            border: 1px solid themed(grayBg);
+            border: 1px solid themed(textColorSoft);
             background-color: themed(grayBg);
 
             .badgeIcon {
@@ -146,7 +168,7 @@
           font-weight: 500;
           padding: 5px;
           border-radius: 8px;
-          background-color: themed(grayBg);
+          background-color: themed(navBg);
           box-shadow: themed(textColorSoft) 0px 2px 4px,
             themed(textColorSoft) 0px 4px 8px;
 
