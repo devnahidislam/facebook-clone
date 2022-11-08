@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import Comments from './Comments';
 import { useState } from 'react';
+import ReadMoreLess from '../readMoreLess';
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
@@ -44,7 +45,9 @@ const Post = ({ post }) => {
       </div>
 
       <div className="content">
-        <p className="postDec">{post.desc}</p>
+        <ReadMoreLess cls={'postDesc'} limit={150}>
+          {post.desc}
+        </ReadMoreLess>
         {post.img && <img src={post.img} alt="" className="postImg" />}
       </div>
       <div className="info">
@@ -61,7 +64,7 @@ const Post = ({ post }) => {
             <span className="likeNumber">24</span>
           </div>
           <div className="right">
-            <span className="comments">5 Comments</span>
+            <span className="commentsNum">5 Comments</span>
             <FiberManualRecordIcon className="dotIcon" />
             <span className="shares">7 Shares</span>
           </div>

@@ -104,9 +104,18 @@
       }
     }
     .content {
-      .postDec {
+      .postDesc {
         font-size: 15px;
-        padding: 5px 12px 0;
+        padding: 5px 12px;
+
+        span {
+          font-size: 14px;
+          color: themed(textColor);
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
       }
       .postImg {
         width: 100%;
@@ -183,7 +192,7 @@
           display: flex;
           align-items: center;
 
-          .comments {
+          .commentsNum {
             cursor: pointer;
 
             &:hover {

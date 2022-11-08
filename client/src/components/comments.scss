@@ -13,7 +13,8 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 10px;
+      // margin-bottom: 10px;
+      margin: 10px 0;
 
       .profileImg {
         height: 35px;
@@ -88,6 +89,7 @@
       display: flex;
       align-content: center;
       gap: 5px;
+      padding: 2px 0;
 
       .userProfile {
         height: 35px;
@@ -155,6 +157,14 @@
             .commentDesc {
               color: themed(textColor);
               font-size: 15px;
+
+              span {
+                font-size: 13px;
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
             }
           }
           .right {

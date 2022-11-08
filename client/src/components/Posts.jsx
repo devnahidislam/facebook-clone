@@ -12,7 +12,7 @@ const Posts = () => {
       userId: 1,
       profilePic:
         'https://media-exp1.licdn.com/dms/image/C5603AQH1gJkOFOROSw/profile-displayphoto-shrink_800_800/0/1622908233063?e=1672876800&v=beta&t=3hD8rfblUpYIkCc2DrQA42KKL8__X76FX1DQiV85WTI',
-      desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat veniam, odit tempore quod ratione ipsam?',
+      desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat veniam, odit tempore quod ratione ipsam? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat veniam, odit tempore quod ratione ipsam? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat veniam, odit tempore quod ratione ipsam? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat veniam, odit tempore quod ratione ipsam? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat veniam, odit tempore quod ratione ipsam?',
       img: 'https://media-exp1.licdn.com/dms/image/C5603AQH1gJkOFOROSw/profile-displayphoto-shrink_800_800/0/1622908233063?e=1672876800&v=beta&t=3hD8rfblUpYIkCc2DrQA42KKL8__X76FX1DQiV85WTI',
     },
     {

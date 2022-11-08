@@ -6,6 +6,7 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import './comments.scss';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/authContext';
+import ReadMoreLess from '../readMoreLess';
 
 const Comments = () => {
   const { currentUser } = useContext(AuthContext);
@@ -14,7 +15,7 @@ const Comments = () => {
   const comments = [
     {
       id: 1,
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti repellat expedita voluptates.',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti repellat expedita voluptates.Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti repellat expedita voluptates.Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti repellat expedita voluptates.Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti repellat expedita voluptates.Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti repellat expedita voluptates.',
       name: 'Nahid Islam',
       UserId: 1,
       profilePic:
@@ -68,7 +69,9 @@ const Comments = () => {
                     <span>{comment.name}</span>
                   </Link>
                 </div>
-                <p className="commentDesc">{comment.desc}</p>
+                <ReadMoreLess cls={'commentDesc'} limit={150}>
+                  {comment.desc}
+                </ReadMoreLess>
               </div>
               <div className="right">
                 <Tooltip
