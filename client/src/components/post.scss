@@ -112,7 +112,7 @@
           font-size: 14px;
           color: themed(textColor);
 
-          &:hover{
+          &:hover {
             text-decoration: underline;
           }
         }
@@ -215,7 +215,7 @@
 
       hr {
         margin: 5px 0;
-        border: 1px solid themed(grayBg);
+        border: 0.5px solid themed(shadowClr);
       }
 
       .postActions {
@@ -246,7 +246,7 @@
             font-size: 24px;
           }
           .likedIcon {
-            color: themed(icon);
+            color: #f33e5c;
             font-size: 24px;
           }
           .actionBtnText {

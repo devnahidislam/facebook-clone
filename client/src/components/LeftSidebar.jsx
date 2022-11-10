@@ -87,35 +87,11 @@ const LeftSidebar = () => {
 
           <li className="leftSidebarListItem">
             <img
-              src="assets/icons/nahid.jpg"
+              src="/assets/icons/nahid.jpg"
               alt="avatar"
               className="leftSidebarImg"
             />
             <span className="leftSidebarListItemText">Page Name</span>
-          </li>
-          <li className="leftSidebarListItem">
-            <img
-              src="assets/icons/nahid.jpg"
-              alt="avatar"
-              className="leftSidebarImg"
-            />
-            <span className="leftSidebarListItemText">Pages</span>
-          </li>
-          <li className="leftSidebarListItem">
-            <img
-              src="assets/icons/nahid.jpg"
-              alt="avatar"
-              className="leftSidebarImg"
-            />
-            <span className="leftSidebarListItemText">Pages</span>
-          </li>
-          <li className="leftSidebarListItem">
-            <img
-              src="assets/icons/nahid.jpg"
-              alt="avatar"
-              className="leftSidebarImg"
-            />
-            <span className="leftSidebarListItemText">Pages</span>
           </li>
         </ul>
       </div>

@@ -10,12 +10,12 @@ const ReadMoreLess = ({ cls, limit, children }) => {
     setReadMoreShown((prevState) => !prevState);
   };
 
-  const btnStyle = { fontWeight: 'bold', cursor: 'pointer', marginLeft: '3px' };
+  const btnStyle = { fontWeight: '500', cursor: 'pointer', marginLeft: '3px' };
 
   return (
     <div>
       <p className={cls}>
-        {isReadMoreShown ? text : text.substring(0, limit)}
+        {isReadMoreShown ? text : text.substr(0, limit)}
         {length > limit && '...'}
         {length > limit && (
           <span style={btnStyle} onClick={toggleBtn}>

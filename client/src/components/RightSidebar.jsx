@@ -53,7 +53,7 @@ const RightSidebar = () => {
         <div className="birthdayContainer">
           <h4 className="rightSidebarHeader">Birthdays</h4>
           <div className="birthdayEvent">
-            <img src="assets/icons/gift.png" alt="" className="birthdayImg" />
+            <img src="/assets/icons/gift.png" alt="" className="birthdayImg" />
             <span className="birthdayText">
               <b>Jahid Hasan</b> and <b>3 other friends</b> have birthdays
               today.
@@ -71,7 +71,7 @@ const RightSidebar = () => {
           <div className="suggestFriends">
             <div className="suggestLeft">
               <img
-                src="assets/icons/nahid.jpg"
+                src="/assets/icons/nahid.jpg"
                 alt="avatar"
                 className="suggestLeftImg"
               />
@@ -91,7 +91,7 @@ const RightSidebar = () => {
           <div className="suggestFriends">
             <div className="suggestLeft">
               <img
-                src="assets/icons/nahid.jpg"
+                src="/assets/icons/nahid.jpg"
                 alt="avatar"
                 className="suggestLeftImg"
               />
@@ -139,7 +139,7 @@ const RightSidebar = () => {
             <li className="rightbarFriend">
               <div className="rightbarFriendImgContainer">
                 <img
-                  src="assets/icons/noAvatar.png"
+                  src="/assets/icons/noAvatar.png"
                   alt="avatar"
                   className="friendImg"
                 />
@@ -151,7 +151,7 @@ const RightSidebar = () => {
             <li className="rightbarFriend">
               <div className="rightbarFriendImgContainer">
                 <img
-                  src="assets/icons/noAvatar.png"
+                  src="/assets/icons/noAvatar.png"
                   alt="avatar"
                   className="friendImg"
                 />
@@ -162,7 +162,7 @@ const RightSidebar = () => {
             <li className="rightbarFriend">
               <div className="rightbarFriendImgContainer">
                 <img
-                  src="assets/icons/noAvatar.png"
+                  src="/assets/icons/noAvatar.png"
                   alt="avatar"
                   className="friendImg"
                 />

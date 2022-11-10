@@ -92,7 +92,7 @@
 
     hr {
       margin: 10px 0;
-      border: 1px solid themed(grayBg);
+      border: 0.5px solid themed(shadowClr);
     }
 
     .shareBottom {
@@ -114,6 +114,10 @@
 
         &:hover {
           background-color: themed(hover);
+        }
+
+        .shareOptionText {
+          font-size: 15px;
         }
       }
     }

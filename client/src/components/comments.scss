@@ -6,14 +6,13 @@
 
     hr {
       margin-bottom: 5px;
-      border: 1px solid themed(grayBg);
+      border: 0.5px solid themed(shadowClr);
     }
 
     .writeComment {
       display: flex;
       align-items: center;
       gap: 10px;
-      // margin-bottom: 10px;
       margin: 10px 0;
 
       .profileImg {

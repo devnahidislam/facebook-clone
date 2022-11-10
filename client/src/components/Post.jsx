@@ -16,7 +16,7 @@ import ReadMoreLess from '../readMoreLess';
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
-  const liked = true;
+  const liked = false;
 
   return (
     <div className="post">
