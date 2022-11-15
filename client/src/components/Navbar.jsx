@@ -42,6 +42,14 @@ const Navbar = () => {
     setOpen(false);
   });
 
+  const [searchCls, setSearchCls] = useState(false);
+  const toggleActive = () => {
+    setSearchCls((searchCls) => !searchCls);
+  };
+  const searchbar = searchCls ? 'activeSearchbar' : '';
+  const searchIcon = searchCls ? 'activeSearchIcon' : '';
+  const toogleCls = searchCls ? 'active' : '';
+
   return (
     <div className="navbar">
       <div className="navLeft">
@@ -50,19 +58,23 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className="navCenter">
-        <div className="searchbar">
-          <SearchIcon className="searchIcon" />
+      <div className={`navCenter ${toogleCls}`}>
+        <div className={`searchbar ${searchbar}`}>
+          <SearchIcon
+            className={`searchIcon ${searchIcon}`}
+            onClick={toggleActive}
+          />
           <input
             type="text"
             placeholder="Search Facebook"
-            className="serarchInput"
+            className={`serarchInput ${toogleCls}`}
+            id="searchId"
           />
         </div>
       </div>
 
       <div className="navRight">
-        <div className="navIcons">
+        <div className={`navIcons ${toogleCls}`}>
           <Tooltip
             arrow
             TransitionComponent={Zoom}
