@@ -10,6 +10,11 @@
     overflow-y: scroll;
     scroll-snap-type: y proximity;
 
+    @include small {
+      overflow-y: hidden;
+      flex: 1;
+    }
+
     &::-webkit-scrollbar {
       width: 5px;
     }
@@ -38,6 +43,11 @@
           transition: 0.2s;
           scroll-snap-align: center;
 
+          @include small {
+            width: fit-content;
+            border-radius: 50%;
+          }
+
           .leftSidebarImg {
             width: 30px;
             height: 30px;
@@ -61,6 +71,10 @@
             font-weight: 500;
             color: themed(textColor);
             text-transform: capitalize;
+
+            @include small {
+              display: none;
+            }
           }
         }
       }

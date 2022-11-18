@@ -87,7 +87,7 @@ const LeftSidebar = () => {
 
           <li className="leftSidebarListItem">
             <img
-              src="/assets/icons/nahid.jpg"
+              src="/assets/icons/noAvatar.png"
               alt="avatar"
               className="leftSidebarImg"
             />

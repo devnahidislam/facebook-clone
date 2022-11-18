@@ -71,14 +71,14 @@ const RightSidebar = () => {
           <div className="suggestFriends">
             <div className="suggestLeft">
               <img
-                src="/assets/icons/nahid.jpg"
+                src="/assets/icons/noAvatar.png"
                 alt="avatar"
                 className="suggestLeftImg"
               />
             </div>
             <div className="suggestRight">
               <div className="suggestTitle">
-                <h5 className="friendName">Nahid Islam</h5>
+                <h5 className="friendName">Jennie</h5>
                 <span className="duration">7h</span>
               </div>
               <div className="suggestBtn">
@@ -91,14 +91,14 @@ const RightSidebar = () => {
           <div className="suggestFriends">
             <div className="suggestLeft">
               <img
-                src="/assets/icons/nahid.jpg"
+                src="/assets/icons/noAvatar.png"
                 alt="avatar"
                 className="suggestLeftImg"
               />
             </div>
             <div className="suggestRight">
               <div className="suggestTitle">
-                <h5 className="friendName">Nahid Islam</h5>
+                <h5 className="friendName">John Smith</h5>
                 <span className="duration">7h</span>
               </div>
               <div className="suggestBtn">

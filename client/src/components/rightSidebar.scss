@@ -10,6 +10,10 @@
     overflow-y: scroll;
     scroll-snap-type: y proximity;
 
+    @include small {
+      flex: 1;
+    }
+
     &::-webkit-scrollbar {
       width: 6px;
     }
@@ -24,6 +28,10 @@
     }
     .rightSidebarWrapper {
       padding: 10px 10px 0;
+
+      @include small {
+        display: none;
+      }
 
       /* Pages and profile container */
       .pageProfile {
@@ -122,11 +130,12 @@
           }
           .birthdayText {
             font-weight: 300;
-            font-size: 15px;
+            font-size: 14px;
             color: themed(textColorSoft);
 
             b {
               color: themed(textColor);
+              font-size: 14px;
             }
           }
         }
@@ -203,13 +212,15 @@
               }
             }
             .suggestBtn {
+              display: flex;
+              gap: 6px;
+
               .basicBtn {
                 padding: 6px 10px;
                 border: none;
                 border-radius: 5px;
-                font-size: 15px;
+                font-size: 14px;
                 font-weight: bold;
-                margin-right: 10px;
                 cursor: pointer;
               }
               .followBtn {

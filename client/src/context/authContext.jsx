@@ -11,9 +11,9 @@ export const AuthContextProvider = ({ children }) => {
     //TO DO
     setCurrentUser({
       id: 1,
-      name: 'Nahid Islam',
+      name: 'Khadija Begum',
       profilePic:
-        'https://media-exp1.licdn.com/dms/image/C5603AQH1gJkOFOROSw/profile-displayphoto-shrink_800_800/0/1622908233063?e=1672876800&v=beta&t=3hD8rfblUpYIkCc2DrQA42KKL8__X76FX1DQiV85WTI',
+        'https://media-exp1.licdn.com/dms/image/D4E03AQGhyXgXBxNBQQ/profile-displayphoto-shrink_800_800/0/1668707540248?e=1674086400&v=beta&t=tLn6XM5sCD3s0OXhYlDSGgG3aG7CItWJ8Q5cvuPIkik',
     });
   };
 

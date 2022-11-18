@@ -38,15 +38,15 @@ const Share = () => {
 
       <div className="shareBottom">
         <div className="shareOption">
-          <VideoCameraBackIcon color="error" />
+          <VideoCameraBackIcon color="error" className="icon" />
           <span className="shareOptionText">Live Video</span>
         </div>
         <div className="shareOption">
-          <PermMediaIcon color="success" />
+          <PermMediaIcon color="success" className="icon" />
           <span className="shareOptionText">Photo/Video</span>
         </div>
         <div className="shareOption">
-          <MoodIcon color="warning" />
+          <MoodIcon color="warning" className="icon" />
           <span className="shareOptionText">Feeling/Activity</span>
         </div>
       </div>

@@ -65,9 +65,13 @@
           background: transparent;
           outline: none;
 
+          @include small {
+            font-size: 15px;
+          }
           &::placeholder {
             text-transform: capitalize;
             color: themed(textColorSoft);
+            font-size: 15px;
           }
         }
       }
@@ -106,7 +110,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 6px;
+        gap: 4px;
         padding: 6px 3px;
         border-radius: 10px;
         cursor: pointer;
@@ -116,8 +120,20 @@
           background-color: themed(hover);
         }
 
+        .icon {
+          font-size: 22px;
+
+          @include small {
+            font-size: 20px;
+          }
+        }
+
         .shareOptionText {
-          font-size: 15px;
+          font-size: 13px;
+
+          @include small {
+            font-size: 13px;
+          }
         }
       }
     }

@@ -9,7 +9,11 @@
       color: themed(textColor);
 
       .posts {
-        padding: 0 50px;
+        padding: 0 40px;
+
+        @include small {
+          padding: 0;
+        }
       }
     }
   }
