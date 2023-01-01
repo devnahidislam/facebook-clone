@@ -28,46 +28,48 @@ const Profile = () => {
         </div>
 
         <div className="profileInfo">
-          <div className="infoLeft">
-            <img className="profileImg" src={currentUser.profilePic} alt="" />
-            <div className="profileIcon">
-              <CameraAltIcon className="icon" />
+          <div className="topcontainer">
+            <div className="infoLeft">
+              <img className="profileImg" src={currentUser.profilePic} alt="" />
+              <div className="profileIcon">
+                <CameraAltIcon className="icon" />
+              </div>
             </div>
-          </div>
-          <div className="infoCenter">
-            <h3 className="userName">{currentUser.name}</h3>
-            <span className="friendsNumber">124 friends</span>
-            <div className="friendsProfiles">
-              <img
-                src="/assets/person/2.jpeg"
-                alt=""
-                className="friendsProfilePic"
-              />
-              <img
-                src="/assets/person/1.jpeg"
-                alt=""
-                className="friendsProfilePic"
-              />
-              <img
-                src="/assets/person/4.jpeg"
-                alt=""
-                className="friendsProfilePic"
-              />
-              <img
-                src="/assets/person/5.jpeg"
-                alt=""
-                className="friendsProfilePic"
-              />
-              <img
-                src="/assets/person/7.jpeg"
-                alt=""
-                className="friendsProfilePic"
-              />
-              <img
-                src="/assets/person/8.jpeg"
-                alt=""
-                className="friendsProfilePic"
-              />
+            <div className="infoCenter">
+              <h3 className="userName">{currentUser.name}</h3>
+              <span className="friendsNumber">124 friends</span>
+              <div className="friendsProfiles">
+                <img
+                  src="/assets/person/2.jpeg"
+                  alt=""
+                  className="friendsProfilePic"
+                />
+                <img
+                  src="/assets/person/1.jpeg"
+                  alt=""
+                  className="friendsProfilePic"
+                />
+                <img
+                  src="/assets/person/4.jpeg"
+                  alt=""
+                  className="friendsProfilePic"
+                />
+                <img
+                  src="/assets/person/5.jpeg"
+                  alt=""
+                  className="friendsProfilePic"
+                />
+                <img
+                  src="/assets/person/7.jpeg"
+                  alt=""
+                  className="friendsProfilePic"
+                />
+                <img
+                  src="/assets/person/8.jpeg"
+                  alt=""
+                  className="friendsProfilePic"
+                />
+              </div>
             </div>
           </div>
           <div className="infoRight">
@@ -90,9 +92,6 @@ const Profile = () => {
                   target="_blank"
                 >
                   <InstagramIcon className="icon" />
-                </a>
-                <a href="pinterest.com/devnahidislam" target="_blank">
-                  <PinterestIcon className="icon" />
                 </a>
               </div>
             </div>
@@ -184,7 +183,7 @@ const Profile = () => {
                 <span>Jui</span>
               </div>
               <div className="friend">
-                <img src="/assets/person/5.jpeg" alt="" />
+                <img src="/assets/person/6.jpeg" alt="" />
                 <span>Julia</span>
               </div>
               <div className="friend">

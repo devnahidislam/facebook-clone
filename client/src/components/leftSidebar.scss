@@ -14,6 +14,9 @@
       overflow-y: hidden;
       flex: 1;
     }
+    @include tab {
+      display: none;
+    }
 
     &::-webkit-scrollbar {
       width: 5px;

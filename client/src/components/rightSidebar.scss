@@ -13,6 +13,9 @@
     @include small {
       flex: 1;
     }
+    @include tab {
+      display: none;
+    }
 
     &::-webkit-scrollbar {
       width: 6px;
