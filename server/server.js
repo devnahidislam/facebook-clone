@@ -1,4 +1,5 @@
 import express from 'express';
+import cookieParser from 'cookie-parser';
 const app = express();
 import dotenv from 'dotenv';
 dotenv.config();
@@ -11,6 +12,8 @@ app.use(
     origin: 'http://127.0.0.1:5173/',
   })
 );
+
+app.use(cookieParser());
 
 import authRoute from './routes/auth.js';
 

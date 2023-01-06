@@ -1,7 +1,8 @@
 import { db } from '../db.js';
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
-export const register = async (req, res, next) => {
+export const register = (req, res, next) => {
   // Check user if exist
   const check = 'SELECT * FROM users WHERE email = ?';
 
@@ -31,6 +32,36 @@ export const register = async (req, res, next) => {
   });
 };
 
-export const login = async (req, res, next) => {};
+export const login = (req, res, next) => {
+  const q = 'SELECT * FROM users WHERE email = ?';
 
-export const logout = async (req, res, next) => {};
+  db.query(q, [req.body.email], (err, data) => {
+    if (err) return res.status(500).json(err);
+    if (data.length === 0) return res.status(404).json('User not found.');
+
+    const checkPassword = bcrypt.compareSync(
+      req.body.password,
+      data[0].password
+    );
+
+    if (!checkPassword) return res.status(400).json('Wrong input.');
+    const token = jwt.sign({ id: data[0].id }, process.env.KEY);
+
+    const { password, ...other } = data[0];
+
+    res
+      .cookie('AccessToken', token, { httpOnly: true })
+      .status(200)
+      .json(other);
+  });
+};
+
+export const logout = (req, res, next) => {
+  res
+    .clearCookie('AccessToken', {
+      secure: true,
+      nameSite: 'none',
+    })
+    .status(200)
+    .json('User has been loged out.');
+};
