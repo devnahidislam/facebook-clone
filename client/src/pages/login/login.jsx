@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './login.scss';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { loginSchema } from '../../schema';
 import { CircularProgress, TextField, Tooltip, Zoom } from '@mui/material';
@@ -8,12 +8,16 @@ import { AuthContext } from './../../context/authContext';
 
 const Login = () => {
   const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const onSubmit = async (values, actions) => {
-    console.log('Login form submited Successfully.');
-    console.log(values);
+    try {
+      await login(values);
+      navigate('/');
+    } catch (error) {
+      console.log(error);
+    }
     actions.resetForm();
-    login();
   };
 
   const {

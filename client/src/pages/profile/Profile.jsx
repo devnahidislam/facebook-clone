@@ -30,13 +30,19 @@ const Profile = () => {
         <div className="profileInfo">
           <div className="topcontainer">
             <div className="infoLeft">
-              <img className="profileImg" src={currentUser.profilePic} alt="" />
+              <img
+                className="profileImg"
+                src={currentUser?.profilePic || 'assets/icons/noAvatar.png'}
+                alt=""
+              />
               <div className="profileIcon">
                 <CameraAltIcon className="icon" />
               </div>
             </div>
             <div className="infoCenter">
-              <h3 className="userName">{currentUser.name}</h3>
+              <h3 className="userName">
+                {currentUser?.firstname + ' ' + currentUser?.surname}
+              </h3>
               <span className="friendsNumber">124 friends</span>
               <div className="friendsProfiles">
                 <img

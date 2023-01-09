@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-const SurnameRules = /^[a-z]+$/;
+const nameRules = /^[a-z, A-Z]+$/;
 // Only amall letter allowed for Surname.
 const passwordRules =
   /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
@@ -15,12 +15,15 @@ export const registerSchema = yup.object().shape({
     .string()
     .min(3, 'First Name must be at least 3 characters long.')
     .max(20, "First Name can't be more than 20 characters.")
+    .matches(nameRules, {
+      message: 'Only letter allowed.',
+    })
     .required('Required'),
   surname: yup
     .string()
     .min(3, 'Surname must be at least 3 characters long.')
-    .matches(SurnameRules, {
-      message: 'Surname must be small letter.',
+    .matches(nameRules, {
+      message: 'Only letter allowed.',
     })
     .max(20, "Surrname can't be more than 20 characters.")
     .required('Required'),

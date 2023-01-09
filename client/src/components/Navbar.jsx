@@ -104,7 +104,7 @@ const Navbar = () => {
             <div className="menuToggle" onClick={toggleMenu}>
               <div className="overlay"></div>
               <img
-                src={currentUser.profilePic || 'assets/icons/noAvatar.png'}
+                src={currentUser?.profilePic || 'assets/icons/noAvatar.png'}
                 alt="img"
                 className="navImg"
               />
@@ -118,9 +118,11 @@ const Navbar = () => {
               <Link to={'/profile/1'}>
                 <div className="profile">
                   <img
-                    src={currentUser.profilePic || 'assets/icons/noAvatar.png'}
+                    src={currentUser?.profilePic || 'assets/icons/noAvatar.png'}
                   />
-                  <span>{currentUser?.name}</span>
+                  <span>
+                    {currentUser?.firstname + ' ' + currentUser?.surname}
+                  </span>
                 </div>
               </Link>
               <div className="menuOption">

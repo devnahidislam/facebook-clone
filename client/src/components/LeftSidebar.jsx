@@ -30,7 +30,7 @@ const LeftSidebar = () => {
           <Link to={'/profile/1'}>
             <li className="leftSidebarListItem">
               <img
-                src={currentUser.profilePic || 'assets/icons/noAvatar.png'}
+                src={currentUser?.profilePic || 'assets/icons/noAvatar.png'}
                 alt="img"
                 className="leftSidebarImg"
               />
@@ -38,7 +38,7 @@ const LeftSidebar = () => {
                 className="leftSidebarListItemText"
                 style={{ fontWeight: '500' }}
               >
-                {currentUser.name}
+                {currentUser?.firstname + ' ' + currentUser?.surname}
               </span>
             </li>
           </Link>

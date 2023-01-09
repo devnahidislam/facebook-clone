@@ -1,14 +1,22 @@
 import React from 'react';
 import './register.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { registerSchema } from '../../schema';
 import { useFormik } from 'formik';
 import { CircularProgress, Tooltip, Zoom, TextField } from '@mui/material';
+import axios from 'axios';
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const onSubmit = async (values, actions) => {
     console.log('Registration form submited Successfully.');
-    console.log(values);
+    try {
+      await axios.post('http://localhost:5000/api/auth/register', values);
+      navigate('/');
+    } catch (error) {
+      console.log(error.response.data);
+    }
     actions.resetForm();
   };
 
@@ -36,7 +44,7 @@ const Register = () => {
   return (
     <div className="register">
       <div className="registerWrapper">
-        <div className="registerRight">
+        <div className="registerLeft">
           <form className="registerBox" onSubmit={handleSubmit}>
             <Tooltip
               title={
@@ -162,6 +170,7 @@ const Register = () => {
               />
             </Tooltip>
 
+            {/* <span>{error?.response.data}</span> */}
             <button className="registerBtn" disabled={!isValid} type="submit">
               {isSubmitting ? (
                 <CircularProgress sx={{ color: 'white' }} size={25} />

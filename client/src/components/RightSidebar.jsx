@@ -31,7 +31,7 @@ const RightSidebar = () => {
             <li className="rightsidebarPage">
               <div className="rightsidebarPageImg">
                 <img
-                  src={currentUser.profilePic || 'assets/icons/noAvatar.png'}
+                  src={currentUser?.profilePic || 'assets/icons/noAvatar.png'}
                   alt="avatar"
                   className="pageImg"
                 />
