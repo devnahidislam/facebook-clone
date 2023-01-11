@@ -2,7 +2,7 @@ import { db } from '../db.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-export const register = (req, res, next) => {
+export const register = async (req, res, next) => {
   // Check user if exist
   const check = 'SELECT * FROM users WHERE email = ?';
 
@@ -47,12 +47,12 @@ export const login = (req, res, next) => {
     if (!checkPassword) return res.status(400).json('Wrong input.');
     const token = jwt.sign({ id: data[0].id }, process.env.KEY);
 
-    const { password, ...other } = data[0];
+    const { password, ...others } = data[0];
 
     res
       .cookie('AccessToken', token, { httpOnly: true })
       .status(200)
-      .json(other);
+      .json(others);
   });
 };
 

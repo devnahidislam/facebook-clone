@@ -27,7 +27,13 @@ const Share = () => {
         </div>
         <div className="shareInputContainer">
           <input
-            placeholder={"What's on your mind, " + currentUser?.name + ' ?'}
+            placeholder={
+              "What's on your mind, " +
+              currentUser?.firstname +
+              ' ' +
+              currentUser?.surname +
+              '?'
+            }
             className="shareInput"
           />
         </div>

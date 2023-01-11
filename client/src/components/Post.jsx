@@ -25,12 +25,17 @@ const Post = ({ post }) => {
           <div className="profileImg">
             <Link to={`/profile/${post.userId}`}>
               <div className="overlay"></div>
-              <img src={post.profilePic} alt="" />
+              <img
+                src={post.profilePic || 'assets/icons/noAvatar.png'}
+                alt=""
+              />
             </Link>
           </div>
           <div className="details">
             <Link to={`/profile/${post.userId}`}>
-              <span className="userName">{post.name}</span>
+              <span className="userName">
+                {post.firstname + ' ' + post.surname}
+              </span>
             </Link>
             <div className="postStatus">
               <span className="postDate">3 min ago</span>

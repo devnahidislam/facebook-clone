@@ -13,7 +13,7 @@ const Register = () => {
     console.log('Registration form submited Successfully.');
     try {
       await axios.post('http://localhost:5000/api/auth/register', values);
-      navigate('/');
+      navigate('/login');
     } catch (error) {
       console.log(error.response.data);
     }

@@ -6,18 +6,25 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Credentials", true);
+  next();
+});
+
 import cors from 'cors';
 app.use(
   cors({
-    origin: 'http://127.0.0.1:5173/',
+    origin: 'http://127.0.0.1:5173',
   })
 );
 
 app.use(cookieParser());
 
 import authRoute from './routes/auth.js';
+import postsRoute from './routes/posts.js';
 
 app.use('/api/auth', authRoute);
+app.use('/api/posts', postsRoute);
 
 app.use((err, res) => {
   const errorStatus = err.status || 500;
