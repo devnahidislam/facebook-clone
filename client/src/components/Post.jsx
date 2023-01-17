@@ -1,18 +1,17 @@
-import React from 'react';
-import './post.scss';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import PublicIcon from '@mui/icons-material/Public';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import PublicIcon from '@mui/icons-material/Public';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
-import { Link } from 'react-router-dom';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import { IconButton } from '@mui/material';
-import Comments from './Comments';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ReadMoreLess from '../readMoreLess';
+import Comments from './Comments';
+import './post.scss';
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);

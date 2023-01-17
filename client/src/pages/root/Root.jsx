@@ -1,10 +1,10 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import { Outlet } from 'react-router-dom';
+import { LeftSidebar, Navbar, RightSidebar } from '../../components';
+import { DarkModeContext } from './../../context/darkModeContext';
 import './root.scss';
 import './theme.scss';
-import { Navbar, LeftSidebar, RightSidebar } from '../../components';
-import { Outlet } from 'react-router-dom';
-import { DarkModeContext } from './../../context/darkModeContext';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const Root = () => {
   const { darkMode } = useContext(DarkModeContext);

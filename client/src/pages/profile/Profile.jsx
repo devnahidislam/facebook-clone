@@ -1,21 +1,21 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../context/authContext';
-import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
-import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import PinterestIcon from '@mui/icons-material/Pinterest';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
+import ModeEditIcon from '@mui/icons-material/ModeEdit';
+import PinterestIcon from '@mui/icons-material/Pinterest';
 import RssFeedIcon from '@mui/icons-material/RssFeed';
-import './profile.scss';
-import { Posts } from '../../components';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Posts } from '../../components';
+import { AuthContext } from '../../context/authContext';
+import './profile.scss';
 
 const Profile = () => {
   const { currentUser } = useContext(AuthContext);

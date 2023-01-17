@@ -1,6 +1,6 @@
-import { db } from '../db.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { db } from '../db.js';
 
 export const register = async (req, res, next) => {
   // Check user if exist

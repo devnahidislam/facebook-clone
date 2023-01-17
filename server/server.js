@@ -1,7 +1,9 @@
-import express from 'express';
 import cookieParser from 'cookie-parser';
-const app = express();
+import cors from 'cors';
 import dotenv from 'dotenv';
+import express from 'express';
+
+const app = express();
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
@@ -11,11 +13,9 @@ app.use((req, res, next) => {
   next();
 });
 
-import cors from 'cors';
 app.use(
   cors({
-    origin: ['http://127.0.0.1:5173'],
-    methods: ['GET', 'POST'],
+    origin: ['http://localhost:5173'],
     credentials: true,
   })
 );

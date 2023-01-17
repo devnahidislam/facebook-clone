@@ -1,20 +1,20 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import './navbar.scss';
-import { Link } from 'react-router-dom';
-import SearchIcon from '@mui/icons-material/Search';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import ChatIcon from '@mui/icons-material/Chat';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 import FeedbackOutlinedIcon from '@mui/icons-material/FeedbackOutlined';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import SearchIcon from '@mui/icons-material/Search';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import { IconButton, Tooltip, Zoom } from '@mui/material';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { DarkModeContext } from '../context/darkModeContext';
 import { AuthContext } from './../context/authContext';
+import './navbar.scss';
 
 const useClickOutside = (handler) => {
   const domNode = useRef();

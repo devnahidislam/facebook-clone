@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../context/authContext';
-import VideoCameraBackIcon from '@mui/icons-material/VideoCameraBack';
-import PermMediaIcon from '@mui/icons-material/PermMedia';
 import MoodIcon from '@mui/icons-material/Mood';
-import './share.scss';
+import PermMediaIcon from '@mui/icons-material/PermMedia';
+import VideoCameraBackIcon from '@mui/icons-material/VideoCameraBack';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/authContext';
+import './share.scss';
 
 const Share = () => {
   const { currentUser } = useContext(AuthContext);

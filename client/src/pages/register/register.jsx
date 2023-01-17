@@ -1,10 +1,10 @@
+import { CircularProgress, TextField, Tooltip, Zoom } from '@mui/material';
+import axios from 'axios';
+import { useFormik } from 'formik';
 import React from 'react';
-import './register.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { registerSchema } from '../../schema';
-import { useFormik } from 'formik';
-import { CircularProgress, Tooltip, Zoom, TextField } from '@mui/material';
-import axios from 'axios';
+import './register.scss';
 
 const Register = () => {
   const navigate = useNavigate();

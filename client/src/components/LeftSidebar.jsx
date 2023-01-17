@@ -1,18 +1,18 @@
-import React, { useContext } from 'react';
-import './leftSidebar.scss';
-import HomeIcon from '@mui/icons-material/Home';
-import WidgetsIcon from '@mui/icons-material/Widgets';
-import PlayCircleIcon from '@mui/icons-material/PlayCircle';
-import WorkHistoryOutlinedIcon from '@mui/icons-material/WorkHistoryOutlined';
-import PeopleIcon from '@mui/icons-material/People';
-import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
+import AddLinkIcon from '@mui/icons-material/AddLink';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import EventIcon from '@mui/icons-material/Event';
-import SchoolIcon from '@mui/icons-material/School';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import AddLinkIcon from '@mui/icons-material/AddLink';
+import HomeIcon from '@mui/icons-material/Home';
+import PeopleIcon from '@mui/icons-material/People';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import SchoolIcon from '@mui/icons-material/School';
+import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
+import WidgetsIcon from '@mui/icons-material/Widgets';
+import WorkHistoryOutlinedIcon from '@mui/icons-material/WorkHistoryOutlined';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/authContext';
+import './leftSidebar.scss';
 
 const LeftSidebar = () => {
   const { currentUser } = useContext(AuthContext);

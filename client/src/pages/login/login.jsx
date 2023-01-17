@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import './login.scss';
-import { Link, useNavigate } from 'react-router-dom';
-import { useFormik } from 'formik';
-import { loginSchema } from '../../schema';
 import { CircularProgress, TextField, Tooltip, Zoom } from '@mui/material';
+import { useFormik } from 'formik';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { loginSchema } from '../../schema';
 import { AuthContext } from './../../context/authContext';
+import './login.scss';
 
 const Login = () => {
   const { login } = useContext(AuthContext);

@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
-import './rightSidebar.scss';
-import { IconButton, Tooltip, Zoom } from '@mui/material';
-import VideoCallIcon from '@mui/icons-material/VideoCall';
-import SearchIcon from '@mui/icons-material/Search';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import SupervisedUserCircleOutlinedIcon from '@mui/icons-material/SupervisedUserCircleOutlined';
 import CampaignOutlinedIcon from '@mui/icons-material/CampaignOutlined';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import SearchIcon from '@mui/icons-material/Search';
+import SupervisedUserCircleOutlinedIcon from '@mui/icons-material/SupervisedUserCircleOutlined';
+import VideoCallIcon from '@mui/icons-material/VideoCall';
+import { IconButton, Tooltip, Zoom } from '@mui/material';
+import React, { useContext } from 'react';
 import { AuthContext } from '../context/authContext';
+import './rightSidebar.scss';
 
 const RightSidebar = () => {
   const { currentUser } = useContext(AuthContext);
