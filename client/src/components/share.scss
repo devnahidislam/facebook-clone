@@ -1,4 +1,4 @@
-@import '../pages/root/theme.scss';
+@import "../pages/root/theme.scss";
 
 .share {
   @include themify($themes) {
@@ -82,6 +82,7 @@
         height: 28px;
         padding: 0 10px;
         border-radius: 6px;
+        border: none;
         font-weight: bold;
         font-size: 14px;
         background-color: #1877f2;
@@ -91,6 +92,20 @@
         &:hover {
           background-color: #4394ff;
         }
+      }
+    }
+
+    .uploadImg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5px 0;
+
+      .selectedImg {
+        width: 150px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 5px;
       }
     }
 

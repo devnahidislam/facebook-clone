@@ -1,17 +1,17 @@
-import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import PublicIcon from '@mui/icons-material/Public';
-import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import { IconButton } from '@mui/material';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ReadMoreLess from '../readMoreLess';
-import Comments from './Comments';
-import './post.scss';
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import PublicIcon from "@mui/icons-material/Public";
+import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import { IconButton } from "@mui/material";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import ReadMoreLess from "../readMoreLess";
+import Comments from "./Comments";
+import "./post.scss";
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
@@ -25,7 +25,7 @@ const Post = ({ post }) => {
             <Link to={`/profile/${post.userId}`}>
               <div className="overlay"></div>
               <img
-                src={post.profilePic || 'assets/icons/noAvatar.png'}
+                src={post.profilePic || "assets/icons/noAvatar.png"}
                 alt=""
               />
             </Link>
@@ -33,7 +33,7 @@ const Post = ({ post }) => {
           <div className="details">
             <Link to={`/profile/${post.userId}`}>
               <span className="userName">
-                {post.firstname + ' ' + post.surname}
+                {post.firstname + " " + post.surname}
               </span>
             </Link>
             <div className="postStatus">
@@ -49,11 +49,14 @@ const Post = ({ post }) => {
       </div>
 
       <div className="content">
-        <ReadMoreLess cls={'postDesc'} limit={150}>
+        <ReadMoreLess cls={"postDesc"} limit={150}>
           {post.desc}
         </ReadMoreLess>
-        {post.img && <img src={post.img} alt="" className="postImg" />}
+        {post.img && (
+          <img src={"./upload/img/" + post.img} alt="" className="postImg" />
+        )}
       </div>
+
       <div className="info">
         <div className="postActivity">
           <div className="left">

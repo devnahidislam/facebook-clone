@@ -7,6 +7,7 @@
       position: sticky;
       background-color: themed(grayBg);
       color: themed(textColor);
+      min-height: 100vh;
 
       .posts {
         padding: 0 40px;
