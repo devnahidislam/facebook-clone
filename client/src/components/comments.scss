@@ -1,4 +1,4 @@
-@import '../pages/root/theme.scss';
+@import "../pages/root/theme.scss";
 
 .comments {
   @include themify($themes) {
@@ -192,8 +192,7 @@
           margin-left: 15px;
 
           .like,
-          .reply,
-          .date {
+          .reply {
             font-size: 12px;
             font-weight: 500;
             cursor: pointer;
@@ -201,6 +200,10 @@
             &:hover {
               text-decoration: underline;
             }
+          }
+          .date {
+            font-size: 12px;
+            font-weight: 500;
           }
           .dotIcon {
             font-size: 4px;

@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import ReadMoreLess from "../readMoreLess";
 import Comments from "./Comments";
 import "./post.scss";
-import moment from 'moment';
+import moment from "moment";
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
@@ -38,7 +38,9 @@ const Post = ({ post }) => {
               </span>
             </Link>
             <div className="postStatus">
-              <span className="postDate">{moment(post.createdAt).fromNow()}</span>
+              <span className="postDate">
+                {moment(post.createdAt).fromNow()}
+              </span>
               <FiberManualRecordIcon className="dotIcon" />
               <PublicIcon className="publickIcon" />
             </div>
@@ -106,7 +108,7 @@ const Post = ({ post }) => {
           </div>
         </div>
       </div>
-      {commentOpen && <Comments />}
+      {commentOpen && <Comments postId={post.id} />}
     </div>
   );
 };
