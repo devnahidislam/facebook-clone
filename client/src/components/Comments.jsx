@@ -76,7 +76,7 @@ const Comments = ({ postId }) => {
             type="text"
             placeholder="Write a comment..."
             className="commentInput"
-            value="desc"
+            value={desc}
             onChange={(e) => setDesc(e.target.value)}
           />
         </div>

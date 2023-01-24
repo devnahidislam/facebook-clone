@@ -1,5 +1,5 @@
 import { db } from "../db.js";
-import { jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import moment from "moment";
 
 export const getComments = (req, res) => {

@@ -16,7 +16,7 @@ const ReadMoreLess = ({ cls, limit, children }) => {
     <div>
       <p className={cls}>
         {isReadMoreShown ? text : text.substr(0, limit)}
-        {length > limit && '...'}
+        {length > limit && '___'}
         {length > limit && (
           <span style={btnStyle} onClick={toggleBtn}>
             {isReadMoreShown ? 'See Less' : 'See more'}
