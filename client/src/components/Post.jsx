@@ -7,16 +7,44 @@ import PublicIcon from "@mui/icons-material/Public";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import { IconButton } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import ReadMoreLess from "../readMoreLess";
 import Comments from "./Comments";
 import "./post.scss";
 import moment from "moment";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { makeRequest } from "../axios";
+import { AuthContext } from "../context/authContext";
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
-  const liked = false;
+
+  const { currentUser } = useContext(AuthContext);
+
+  const { isLoading, error, data } = useQuery(["likes", post.id], () =>
+    makeRequest.get("/likes?postId=" + post.id).then((res) => {
+      return res.data;
+    })
+  );
+
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation(
+    (liked) => {
+      if (liked) return makeRequest.delete("/likes?postId=" + post.id);
+      return makeRequest.post("/likes", { postId: post.id });
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["likes"]);
+      },
+    }
+  );
+
+  const handleLike = () => {
+    mutation.mutate(data.includes(currentUser.id));
+  };
 
   return (
     <div className="post">
@@ -71,7 +99,7 @@ const Post = ({ post }) => {
                 <FavoriteIcon className="loveIcon" />
               </div>
             </div>
-            <span className="likeNumber">24</span>
+            <span className="likeNumber">{data?.length}</span>
           </div>
           <div className="right">
             <span className="commentsNum">5 Comments</span>
@@ -83,8 +111,10 @@ const Post = ({ post }) => {
         <hr />
 
         <div className="postActions">
-          <div className="likeBtn">
-            {liked ? (
+          <div className="likeBtn" onClick={handleLike}>
+            {isLoading ? (
+              "Loading"
+            ) : data?.includes(currentUser.id) ? (
               <FavoriteIcon className="likedIcon" />
             ) : (
               <FavoriteBorderIcon className="icon" />

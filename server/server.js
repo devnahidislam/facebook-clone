@@ -42,10 +42,12 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 import authRoute from "./routes/auth.js";
 import postsRoute from "./routes/posts.js";
 import commentsRoute from "./routes/comments.js";
+import likeRoute from "./routes/likes.js";
 
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postsRoute);
 app.use("/api/comments", commentsRoute);
+app.use("/api/likes", likeRoute);
 
 app.use((err, res) => {
   const errorStatus = err.status || 500;
