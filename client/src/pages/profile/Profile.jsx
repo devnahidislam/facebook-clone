@@ -1,24 +1,35 @@
-import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
-import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-import CameraAltIcon from '@mui/icons-material/CameraAlt';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
-import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import PinterestIcon from '@mui/icons-material/Pinterest';
-import RssFeedIcon from '@mui/icons-material/RssFeed';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { Posts } from '../../components';
-import { AuthContext } from '../../context/authContext';
-import './profile.scss';
+import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
+import ModeEditIcon from "@mui/icons-material/ModeEdit";
+import PinterestIcon from "@mui/icons-material/Pinterest";
+import RssFeedIcon from "@mui/icons-material/RssFeed";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import React, { useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Posts } from "../../components";
+import { AuthContext } from "../../context/authContext";
+import "./profile.scss";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { makeRequest } from "../../axios";
 
 const Profile = () => {
   const { currentUser } = useContext(AuthContext);
+
+  const userId = useLocation().pathname.split("/")[2];
+
+  const { isLoading, error, data } = useQuery(["user"], () =>
+    makeRequest.get("/users/find=" + userId).then((res) => {
+      return res.data;
+    })
+  );
+  console.log(data);
 
   return (
     <div className="profile">
@@ -32,7 +43,7 @@ const Profile = () => {
             <div className="infoLeft">
               <img
                 className="profileImg"
-                src={currentUser?.profilePic || 'assets/icons/noAvatar.png'}
+                src={currentUser?.profilePic || "assets/icons/noAvatar.png"}
                 alt=""
               />
               <div className="profileIcon">
@@ -41,7 +52,7 @@ const Profile = () => {
             </div>
             <div className="infoCenter">
               <h3 className="userName">
-                {currentUser?.firstname + ' ' + currentUser?.surname}
+                {currentUser?.firstname + " " + currentUser?.surname}
               </h3>
               <span className="friendsNumber">124 friends</span>
               <div className="friendsProfiles">
@@ -126,13 +137,13 @@ const Profile = () => {
             <div className="data">
               <MapsHomeWorkIcon className="icon" />
               <p>
-                Lives in <Link to={'/'}>Dinajpur</Link>
+                Lives in <Link to={"/"}>Dinajpur</Link>
               </p>
             </div>
             <div className="data">
               <LocationOnIcon className="icon" />
               <p>
-                From <Link to={'/'}>Dinajpur, Bangladesh</Link>
+                From <Link to={"/"}>Dinajpur, Bangladesh</Link>
               </p>
             </div>
             <div className="data">
@@ -149,7 +160,7 @@ const Profile = () => {
           <div className="photosContainer">
             <div className="top">
               <h3>Photos</h3>
-              <Link to={'/'}>See all photos</Link>
+              <Link to={"/"}>See all photos</Link>
             </div>
             <div className="photos">
               <div className="photo">
@@ -169,7 +180,7 @@ const Profile = () => {
           <div className="friendsContainer">
             <div className="top">
               <h3>Friends</h3>
-              <Link to={'/'}>See all friends</Link>
+              <Link to={"/"}>See all friends</Link>
             </div>
             <div className="friends">
               <div className="friend">

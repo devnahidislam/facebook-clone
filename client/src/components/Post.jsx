@@ -84,7 +84,7 @@ const Post = ({ post }) => {
           {post.desc}
         </ReadMoreLess>
         {post.img && (
-          <img src={"./upload/img/" + post.img} alt="" className="postImg" />
+          <img src={"../upload/img/" + post.img} alt="" className="postImg" />
         )}
       </div>
 
