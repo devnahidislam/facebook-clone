@@ -42,14 +42,14 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 import authRoute from "./routes/auth.js";
 import postsRoute from "./routes/posts.js";
 import commentsRoute from "./routes/comments.js";
-import likeRoute from "./routes/likes.js";
-import userRoute from "./routes/users.js";
+import likesRoute from "./routes/likes.js";
+import usersRoute from "./routes/users.js";
 
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postsRoute);
 app.use("/api/comments", commentsRoute);
-app.use("/api/likes", likeRoute);
-app.use("/api/users", userRoute);
+app.use("/api/likes", likesRoute);
+app.use("/api/users", usersRoute);
 
 app.use((err, res) => {
   const errorStatus = err.status || 500;
