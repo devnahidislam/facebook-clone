@@ -115,7 +115,7 @@ const Navbar = () => {
           </Tooltip>
           {open && (
             <div className="menu">
-              <Link to={'/profile/1'}>
+              <Link to={`/profile/${currentUser?.id}`}>
                 <div className="profile">
                   <img
                     src={currentUser?.profilePic || 'assets/icons/noAvatar.png'}

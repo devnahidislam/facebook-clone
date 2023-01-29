@@ -29,13 +29,12 @@ const Profile = () => {
       return res.data;
     })
   );
-  console.log(data);
 
   return (
     <div className="profile">
       <div className="container">
         <div className="coverImg">
-          <img src="/assets/post/3.jpeg" alt="" />
+          <img src={data?.coverpic || "/assets/post/3.jpeg"} alt="" />
         </div>
 
         <div className="profileInfo">
@@ -43,7 +42,7 @@ const Profile = () => {
             <div className="infoLeft">
               <img
                 className="profileImg"
-                src={currentUser?.profilePic || "assets/icons/noAvatar.png"}
+                src={data?.profilePic || "assets/icons/noAvatar.png"}
                 alt=""
               />
               <div className="profileIcon">
@@ -52,7 +51,7 @@ const Profile = () => {
             </div>
             <div className="infoCenter">
               <h3 className="userName">
-                {currentUser?.firstname + " " + currentUser?.surname}
+                {data?.firstname + " " + data?.surname}
               </h3>
               <span className="friendsNumber">124 friends</span>
               <div className="friendsProfiles">
@@ -137,13 +136,13 @@ const Profile = () => {
             <div className="data">
               <MapsHomeWorkIcon className="icon" />
               <p>
-                Lives in <Link to={"/"}>Dinajpur</Link>
+                Lives in <Link to={"/"}>{data?.city || "Dinajpur"}</Link>
               </p>
             </div>
             <div className="data">
               <LocationOnIcon className="icon" />
               <p>
-                From <Link to={"/"}>Dinajpur, Bangladesh</Link>
+                From <Link to={"/"}>{data?.city || "Dinajpur"}, Bangladesh</Link>
               </p>
             </div>
             <div className="data">

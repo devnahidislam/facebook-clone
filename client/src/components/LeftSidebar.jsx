@@ -27,7 +27,7 @@ const LeftSidebar = () => {
               <span className="leftSidebarListItemText">Home</span>
             </li>
           </Link>
-          <Link to={'/profile/1'}>
+          <Link to={`/profile/${currentUser?.id}`}>
             <li className="leftSidebarListItem">
               <img
                 src={currentUser?.profilePic || 'assets/icons/noAvatar.png'}
