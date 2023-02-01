@@ -1,4 +1,4 @@
-@import '../root/theme.scss';
+@import "../root/theme.scss";
 .outlet {
   @include themify($themes) {
     .profile {
@@ -150,7 +150,7 @@
 
               @include small {
                 margin: 5px 0;
-                }
+              }
 
               .socialShare {
                 .icon {
@@ -188,6 +188,14 @@
                 &:hover {
                   background-color: #338fff;
                 }
+              }
+              .followBtn {
+                padding: 8px 20px;
+                border-radius: 5px;
+                color: white;
+                font-size: 14px;
+                background: #1b74e4;
+                cursor: pointer;
               }
               .editProfile {
                 color: black;

@@ -36,7 +36,7 @@ const Comments = ({ postId }) => {
 
   const handleComment = async (e) => {
     e.preventDefault();
-    mutation.mutate({ desc, postId });
+    if (desc !== '') mutation.mutate({ desc, postId });
     setDesc("");
   };
 

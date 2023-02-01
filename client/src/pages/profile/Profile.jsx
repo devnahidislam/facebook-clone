@@ -22,7 +22,7 @@ import { makeRequest } from "../../axios";
 const Profile = () => {
   const { currentUser } = useContext(AuthContext);
 
-  const userId = useLocation().pathname.split("/")[2];
+  const userId = parseInt(useLocation().pathname.split("/")[2]);
 
   const { isLoading, error, data } = useQuery(["user"], () =>
     makeRequest.get("/users/find/" + userId).then((res) => {
@@ -112,14 +112,22 @@ const Profile = () => {
               </div>
             </div>
             <div className="bottom">
-              <div className="addStoryBtn">
-                <AddCircleOutlinedIcon fontSize="small" />
-                Add to story
-              </div>
-              <div className="addStoryBtn editProfile">
-                <ModeEditIcon fontSize="small" />
-                Edit profile
-              </div>
+              {currentUser.id === userId ? (
+                <>
+                  <div className="addStoryBtn">
+                    <AddCircleOutlinedIcon fontSize="small" />
+                    Add to story
+                  </div>
+                  <div className="addStoryBtn editProfile">
+                    <ModeEditIcon fontSize="small" />
+                    Edit profile
+                  </div>
+                </>
+              ) : (
+                <div className="bottom">
+                  <div className="followBtn">Follow</div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -142,7 +150,8 @@ const Profile = () => {
             <div className="data">
               <LocationOnIcon className="icon" />
               <p>
-                From <Link to={"/"}>{data?.city || "Dinajpur"}, Bangladesh</Link>
+                From{" "}
+                <Link to={"/"}>{data?.city || "Dinajpur"}, Bangladesh</Link>
               </p>
             </div>
             <div className="data">
