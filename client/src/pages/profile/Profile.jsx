@@ -30,6 +30,16 @@ const Profile = () => {
     })
   );
 
+  const { isLoading: rIsloading, data: relationshipData } = useQuery(
+    ["relationship"],
+    () =>
+      makeRequest.get("/relationships?followedUserId=" + userId).then((res) => {
+        return res.data;
+      })
+  );
+
+  const handleFollow = () => {};
+
   return (
     <div className="profile">
       <div className="container">
@@ -112,7 +122,9 @@ const Profile = () => {
               </div>
             </div>
             <div className="bottom">
-              {currentUser.id === userId ? (
+              {rIsloading ? (
+                "Loading"
+              ) : currentUser.id === userId ? (
                 <>
                   <div className="addStoryBtn">
                     <AddCircleOutlinedIcon fontSize="small" />
@@ -125,7 +137,11 @@ const Profile = () => {
                 </>
               ) : (
                 <div className="bottom">
-                  <div className="followBtn">Follow</div>
+                  <div className="followBtn" onClick={handleFollow}>
+                    {relationshipData?.includes(currentUser.id)
+                      ? "Following"
+                      : "Follow"}
+                  </div>
                 </div>
               )}
             </div>

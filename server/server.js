@@ -44,12 +44,14 @@ import postsRoute from "./routes/posts.js";
 import commentsRoute from "./routes/comments.js";
 import likesRoute from "./routes/likes.js";
 import usersRoute from "./routes/users.js";
+import relationshipsRoute from "./routes/relationships.js";
 
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postsRoute);
 app.use("/api/comments", commentsRoute);
 app.use("/api/likes", likesRoute);
 app.use("/api/users", usersRoute);
+app.use("/api/relationships", relationshipsRoute);
 
 app.use((err, res) => {
   const errorStatus = err.status || 500;
