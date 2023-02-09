@@ -1,13 +1,13 @@
-import { useQuery } from '@tanstack/react-query';
-import React from 'react';
-import { makeRequest } from '../axios';
-import Post from './Post';
-import './posts.scss';
-import Share from './Share';
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
+import { makeRequest } from "../axios";
+import Post from "./Post";
+import "./posts.scss";
+import Share from "./Share";
 
-const Posts = () => {
-  const { isLoading, error, data } = useQuery(['posts'], () =>
-    makeRequest.get('/posts').then((res) => {
+const Posts = ({ userId }) => {
+  const { isLoading, error, data } = useQuery(["posts"], () =>
+    makeRequest.get("/posts?userId=" + userId).then((res) => {
       return res.data;
     })
   );
@@ -56,9 +56,9 @@ const Posts = () => {
     <div className="posts">
       <Share />
       {error
-        ? 'Something went wrong.'
+        ? "Something went wrong."
         : isLoading
-        ? 'Loading'
+        ? "Loading"
         : data.map((post) => <Post key={post.id} post={post} />)}
     </div>
   );
