@@ -11,16 +11,18 @@ import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import RssFeedIcon from "@mui/icons-material/RssFeed";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Posts } from "../../components";
 import { AuthContext } from "../../context/authContext";
 import "./profile.scss";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { makeRequest } from "../../axios";
+import Update from "../../components/Update";
 
 const Profile = () => {
   const { currentUser } = useContext(AuthContext);
+  const [openUpdate, setOpenUpdate] = useState(false);
 
   const userId = parseInt(useLocation().pathname.split("/")[2]);
 
@@ -61,7 +63,10 @@ const Profile = () => {
     <div className="profile">
       <div className="container">
         <div className="coverImg">
-          <img src={data?.coverpic || "/assets/post/3.jpeg"} alt="" />
+          <img
+            src={"../upload/img/" + data?.coverpic || "/assets/post/3.jpeg"}
+            alt=""
+          />
         </div>
 
         <div className="profileInfo">
@@ -69,7 +74,10 @@ const Profile = () => {
             <div className="infoLeft">
               <img
                 className="profileImg"
-                src={data?.profilePic || "/assets/icons/noAvatar.png"}
+                src={
+                  "../upload/img/" + data?.profilePic ||
+                  "/assets/icons/noAvatar.png"
+                }
                 alt=""
               />
               <div className="profileIcon">
@@ -147,7 +155,10 @@ const Profile = () => {
                     <AddCircleOutlinedIcon fontSize="small" />
                     Add to story
                   </div>
-                  <div className="addStoryBtn editProfile">
+                  <div
+                    className="addStoryBtn editProfile"
+                    onClick={() => setOpenUpdate(true)}
+                  >
                     <ModeEditIcon fontSize="small" />
                     Edit profile
                   </div>
@@ -267,6 +278,7 @@ const Profile = () => {
           <Posts userId={userId} />
         </div>
       </div>
+      {openUpdate && <Update setOpenUpdate={setOpenUpdate} user={data} />}
     </div>
   );
 };
