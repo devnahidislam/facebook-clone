@@ -64,7 +64,11 @@ const Profile = () => {
       <div className="container">
         <div className="coverImg">
           <img
-            src={"../upload/img/" + data?.coverpic || "/assets/post/3.jpeg"}
+            src={
+              data?.coverpic !== null
+                ? "../upload/img/" + data?.coverpic
+                : "/assets/post/3.jpeg"
+            }
             alt=""
           />
         </div>
@@ -75,14 +79,20 @@ const Profile = () => {
               <img
                 className="profileImg"
                 src={
-                  "../upload/img/" + data?.profilePic ||
-                  "/assets/icons/noAvatar.png"
+                  data?.profilePic !== null
+                    ? "../upload/img/" + data?.profilePic
+                    : "/assets/icons/noAvatar.png"
                 }
                 alt=""
               />
-              <div className="profileIcon">
-                <CameraAltIcon className="icon" />
-              </div>
+              {relationshipData?.includes(currentUser.id) || (
+                <div
+                  onClick={() => setOpenUpdate(true)}
+                  className="profileIcon"
+                >
+                  <CameraAltIcon className="icon" />
+                </div>
+              )}
             </div>
             <div className="infoCenter">
               <h3 className="userName">

@@ -43,7 +43,7 @@ const Share = () => {
     e.preventDefault();
     let imgUrl = "";
     if (file) imgUrl = await upload();
-    if (desc !== '') imgUrl = mutation.mutate({ desc, img: imgUrl });
+    if (desc !== "") imgUrl = mutation.mutate({ desc, img: imgUrl });
     setDesc("");
     setFile(null);
   };
@@ -52,17 +52,15 @@ const Share = () => {
     <div className="share">
       <div className="shareTop">
         <div className="shareImg">
-          <Link to={"/profile/1"}>
-            <div className="overlay"></div>
-            <img
-              src={
-                currentUser?.profilePic
-                  ? currentUser.profilePic
-                  : "/assets/icons/noAvatar.png"
-              }
-              alt="avatar"
-            />
-          </Link>
+          <div className="overlay"></div>
+          <img
+            src={
+              currentUser.profilePic
+                ? "../upload/img/" + currentUser.profilePic
+                : "/assets/icons/noAvatar.png"
+            }
+            alt="avatar"
+          />
         </div>
         <div className="shareInputContainer">
           <input

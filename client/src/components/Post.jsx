@@ -54,7 +54,7 @@ const Post = ({ post }) => {
             <Link to={`/profile/${post.userId}`}>
               <div className="overlay"></div>
               <img
-                src={post.profilePic || "assets/icons/noAvatar.png"}
+                src={post?.profilePic !== null ? "../upload/img/" + post?.profilePic : "assets/icons/noAvatar.png"}
                 alt=""
               />
             </Link>

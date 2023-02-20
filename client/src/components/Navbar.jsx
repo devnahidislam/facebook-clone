@@ -1,20 +1,20 @@
-import ChatIcon from '@mui/icons-material/Chat';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import FeedbackOutlinedIcon from '@mui/icons-material/FeedbackOutlined';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
-import LoginIcon from '@mui/icons-material/Login';
-import LogoutIcon from '@mui/icons-material/Logout';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import SearchIcon from '@mui/icons-material/Search';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import { IconButton, Tooltip, Zoom } from '@mui/material';
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { DarkModeContext } from '../context/darkModeContext';
-import { AuthContext } from './../context/authContext';
-import './navbar.scss';
+import ChatIcon from "@mui/icons-material/Chat";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import FeedbackOutlinedIcon from "@mui/icons-material/FeedbackOutlined";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import SearchIcon from "@mui/icons-material/Search";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import { IconButton, Tooltip, Zoom } from "@mui/material";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { DarkModeContext } from "../context/darkModeContext";
+import { AuthContext } from "./../context/authContext";
+import "./navbar.scss";
 
 const useClickOutside = (handler) => {
   const domNode = useRef();
@@ -26,7 +26,7 @@ const useClickOutside = (handler) => {
       }
     };
 
-    document.addEventListener('mousedown', menuHandler);
+    document.addEventListener("mousedown", menuHandler);
   });
   return domNode;
 };
@@ -46,14 +46,14 @@ const Navbar = () => {
   const toggleActive = () => {
     setSearchCls((searchCls) => !searchCls);
   };
-  const searchbar = searchCls ? 'activeSearchbar' : '';
-  const searchIcon = searchCls ? 'activeSearchIcon' : '';
-  const toogleCls = searchCls ? 'active' : '';
+  const searchbar = searchCls ? "activeSearchbar" : "";
+  const searchIcon = searchCls ? "activeSearchIcon" : "";
+  const toogleCls = searchCls ? "active" : "";
 
   return (
     <div className="navbar">
       <div className="navLeft">
-        <Link to={'/'}>
+        <Link to={"/"}>
           <span>facebook</span>
         </Link>
       </div>
@@ -78,7 +78,7 @@ const Navbar = () => {
           <Tooltip
             arrow
             TransitionComponent={Zoom}
-            title={darkMode ? 'Light Mode' : 'Dark Mode'}
+            title={darkMode ? "Light Mode" : "Dark Mode"}
           >
             <IconButton onClick={toggleTheme}>
               {darkMode ? (
@@ -104,7 +104,10 @@ const Navbar = () => {
             <div className="menuToggle" onClick={toggleMenu}>
               <div className="overlay"></div>
               <img
-                src={currentUser?.profilePic || 'assets/icons/noAvatar.png'}
+                src={
+                  "../upload/img/" + currentUser?.profilePic ||
+                  "assets/icons/noAvatar.png"
+                }
                 alt="img"
                 className="navImg"
               />
@@ -118,10 +121,13 @@ const Navbar = () => {
               <Link to={`/profile/${currentUser?.id}`}>
                 <div className="profile">
                   <img
-                    src={currentUser?.profilePic || 'assets/icons/noAvatar.png'}
+                    src={
+                      "../upload/img/" + currentUser?.profilePic ||
+                      "assets/icons/noAvatar.png"
+                    }
                   />
                   <span>
-                    {currentUser?.firstname + ' ' + currentUser?.surname}
+                    {currentUser?.firstname + " " + currentUser?.surname}
                   </span>
                 </div>
               </Link>
@@ -137,7 +143,7 @@ const Navbar = () => {
                 <FeedbackOutlinedIcon fontSize="small" />
                 Give Feedback
               </div>
-              <Link to={'/login'}>
+              <Link to={"/login"}>
                 <div className="menuOption">
                   <LoginIcon fontSize="small" />
                   Log In

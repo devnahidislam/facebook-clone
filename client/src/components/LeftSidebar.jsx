@@ -30,7 +30,7 @@ const LeftSidebar = () => {
           <Link to={`/profile/${currentUser?.id}`}>
             <li className="leftSidebarListItem">
               <img
-                src={currentUser?.profilePic || 'assets/icons/noAvatar.png'}
+                src={"../upload/img/" + currentUser?.profilePic || 'assets/icons/noAvatar.png'}
                 alt="img"
                 className="leftSidebarImg"
               />
