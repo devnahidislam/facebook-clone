@@ -16,9 +16,11 @@ import moment from "moment";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { makeRequest } from "../axios";
 import { AuthContext } from "../context/authContext";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const { currentUser } = useContext(AuthContext);
 
@@ -46,6 +48,21 @@ const Post = ({ post }) => {
     mutation.mutate(data.includes(currentUser.id));
   };
 
+  const deleteMutation = useMutation(
+    (postId) => {
+      return makeRequest.delete("/posts/" + postId);
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["posts"]);
+      },
+    }
+  );
+
+  const handleDelete = () => {
+    deleteMutation.mutate(post.id);
+  };
+
   return (
     <div className="post">
       <div className="user">
@@ -54,7 +71,11 @@ const Post = ({ post }) => {
             <Link to={`/profile/${post.userId}`}>
               <div className="overlay"></div>
               <img
-                src={post?.profilePic !== null ? "../upload/img/" + post?.profilePic : "assets/icons/noAvatar.png"}
+                src={
+                  post?.profilePic !== null
+                    ? "../upload/img/" + post?.profilePic
+                    : "assets/icons/noAvatar.png"
+                }
                 alt=""
               />
             </Link>
@@ -74,9 +95,22 @@ const Post = ({ post }) => {
             </div>
           </div>
         </div>
-        <IconButton className="postMoreIconBtn" aria-label="More">
+        <IconButton
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="postMoreIconBtn"
+          aria-label="More"
+        >
           <MoreHorizIcon className="postMoreIcon" />
         </IconButton>
+        {menuOpen && post.userId === currentUser.id && (
+          <IconButton
+            onClick={handleDelete}
+            className="postMoreIconBtn deletePostBtn"
+            aria-label="More"
+          >
+            <DeleteIcon className="postMoreIcon" />
+          </IconButton>
+        )}
       </div>
 
       <div className="content">

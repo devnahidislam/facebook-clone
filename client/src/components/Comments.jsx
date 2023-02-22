@@ -36,7 +36,7 @@ const Comments = ({ postId }) => {
 
   const handleComment = async (e) => {
     e.preventDefault();
-    if (desc !== '') mutation.mutate({ desc, postId });
+    if (desc !== "") mutation.mutate({ desc, postId });
     setDesc("");
   };
 
@@ -67,7 +67,7 @@ const Comments = ({ postId }) => {
         <div className="profileImg">
           <Link to={"/profile/1"}>
             <div className="overlay"></div>
-            <img src={currentUser.profilePic} alt="" />
+            <img src={"../upload/img/" + currentUser.profilePic} alt="" />
             <div className="activeStatus"></div>
           </Link>
         </div>
@@ -97,7 +97,11 @@ const Comments = ({ postId }) => {
               <div className="userProfile">
                 <Link to={"/profile/1"}>
                   <div className="overlay"></div>
-                  <img src={comment.profilePic} alt="" className="profileImg" />
+                  <img
+                    src={"../upload/img/" + comment.profilePic}
+                    alt=""
+                    className="profileImg"
+                  />
                 </Link>
               </div>
               <div className="commentInfo">
