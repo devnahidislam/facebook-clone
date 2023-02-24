@@ -1,20 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, Route, RouterProvider } from 'react-router-dom';
-import { AuthContextProvider } from './context/authContext';
-import { DarkModeContextProvider } from './context/darkModeContext';
-import './index.scss';
-import ErrorPage from './pages/errorPage/errorPage';
-import Home from './pages/home/Home';
-import Login from './pages/login/Login';
-import Profile from './pages/profile/Profile';
-import Register from './pages/register/Register';
-import Root from './pages/root/Root';
-import ProtectedRoute from './routes/ProtectedRoute';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
+import { AuthContextProvider } from "./context/authContext";
+import { DarkModeContextProvider } from "./context/darkModeContext";
+import "./index.scss";
+import ErrorPage from "./pages/errorPage/errorPage";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import Profile from "./pages/profile/Profile";
+import Register from "./pages/register/Register";
+import Root from "./pages/root/Root";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: (
       <ProtectedRoute>
         <Root />
@@ -24,22 +24,22 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       {
-        path: '/profile/:id',
+        path: "/profile/:id",
         element: <Profile />,
       },
     ],
   },
   {
-    path: 'register',
+    path: "register",
     element: <Register />,
   },
   {
-    path: 'login',
+    path: "login",
     element: <Login />,
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <DarkModeContextProvider>
       <AuthContextProvider>

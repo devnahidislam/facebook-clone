@@ -1,21 +1,22 @@
-import { CircularProgress, TextField, Tooltip, Zoom } from '@mui/material';
-import axios from 'axios';
-import { useFormik } from 'formik';
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { registerSchema } from '../../schema';
-import './register.scss';
+import { CircularProgress, TextField, Tooltip, Zoom } from "@mui/material";
+import axios from "axios";
+import { useFormik } from "formik";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { registerSchema } from "../../schema";
+import "./register.scss";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (values, actions) => {
-    console.log('Registration form submited Successfully.');
     try {
-      await axios.post('http://localhost:5000/api/auth/register', values);
-      navigate('/login');
+      await axios.post("http://localhost:5000/api/auth/register", values);
+      navigate("/login");
     } catch (error) {
-      console.log(error.response.data);
+      toast.error(error.response.data);
     }
     actions.resetForm();
   };
@@ -31,11 +32,11 @@ const Register = () => {
     handleSubmit,
   } = useFormik({
     initialValues: {
-      firstname: '',
-      surname: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
+      firstname: "",
+      surname: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
     },
     validationSchema: registerSchema,
     onSubmit,
@@ -173,17 +174,18 @@ const Register = () => {
             {/* <span>{error?.response.data}</span> */}
             <button className="registerBtn" disabled={!isValid} type="submit">
               {isSubmitting ? (
-                <CircularProgress sx={{ color: 'white' }} size={25} />
+                <CircularProgress sx={{ color: "white" }} size={25} />
               ) : (
-                'Sign Up'
+                "Sign Up"
               )}
             </button>
             <span className="forgotPassword">
-              <Link to={'/login'} className="registerLoginLink">
+              <Link to={"/login"} className="registerLoginLink">
                 Already have an account?
               </Link>
             </span>
           </form>
+          <ToastContainer />
         </div>
         <div className="registerRight">
           <h3 className="registerRightTitle">Join Facebook</h3>

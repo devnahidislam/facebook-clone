@@ -1,10 +1,12 @@
-import { CircularProgress, TextField, Tooltip, Zoom } from '@mui/material';
-import { useFormik } from 'formik';
-import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { loginSchema } from '../../schema';
-import { AuthContext } from './../../context/authContext';
-import './login.scss';
+import { CircularProgress, TextField, Tooltip, Zoom } from "@mui/material";
+import { useFormik } from "formik";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { loginSchema } from "../../schema";
+import { AuthContext } from "./../../context/authContext";
+import "./login.scss";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
@@ -13,9 +15,9 @@ const Login = () => {
   const onSubmit = async (values, actions) => {
     try {
       await login(values);
-      navigate('/');
+      navigate("/");
     } catch (error) {
-      console.log(error);
+      toast.error(error.response.data);
     }
     actions.resetForm();
   };
@@ -31,12 +33,13 @@ const Login = () => {
     handleSubmit,
   } = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
     validationSchema: loginSchema,
     onSubmit,
   });
+
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -99,19 +102,20 @@ const Login = () => {
 
             <button className="loginBtn" disabled={!isValid} type="submit">
               {isSubmitting ? (
-                <CircularProgress sx={{ color: 'white' }} size={25} />
+                <CircularProgress sx={{ color: "white" }} size={25} />
               ) : (
-                'Log In'
+                "Log In"
               )}
             </button>
             <span className="forgotPassword">Forgotten account?</span>
             <hr />
             <div className="loginRegister">
-              <Link to={'/register'}>
+              <Link to={"/register"}>
                 <button className="loginRegisterBtn">Create new account</button>
               </Link>
             </div>
           </form>
+          <ToastContainer />
         </div>
       </div>
     </div>

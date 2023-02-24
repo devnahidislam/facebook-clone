@@ -149,10 +149,12 @@ const Navbar = () => {
                   Log In
                 </div>
               </Link>
-              <div className="menuOption">
-                <LogoutIcon fontSize="small" />
-                Log Out
-              </div>
+              <Link to={"/logout"}>
+                <div className="menuOption">
+                  <LogoutIcon fontSize="small" />
+                  Log Out
+                </div>
+              </Link>
             </div>
           )}
         </div>
